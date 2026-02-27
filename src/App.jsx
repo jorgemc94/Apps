@@ -1,5 +1,17 @@
+import { Routes, Route, useLocation } from "react-router-dom"
+import { AnimatePresence } from "framer-motion"
+import { Home } from "./pages/Home/HomePage"
+import { AppDetail } from "./pages/AppDetail/AppDetailPage"
+
 export function App() {
+  const location = useLocation()
+
   return (
-    <p></p>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/app/:id" element={<AppDetail />} />
+      </Routes>
+    </AnimatePresence>
   )
 }

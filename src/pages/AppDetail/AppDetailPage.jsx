@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom"
 import { apps } from "../../data/apps"
-import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 import { StepsContainer, StepWrapper, PageWrapper } from "./AppDetailStyled"
 
 export function AppDetail() {

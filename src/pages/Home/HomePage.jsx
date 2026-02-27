@@ -1,4 +1,3 @@
-import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 import { HeaderComponent } from "../../components/Header/HeaderComponent"
 import { FooterComponent } from "../../components/Footer/FooterComponent"
 import { IntroComponent } from "../../components/Intro/IntroComponent"
