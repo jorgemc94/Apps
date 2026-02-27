@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { apps } from "../../data/apps"
 import { StepsContainer, StepWrapper, PageWrapper } from "./AppDetailStyled"
+import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 
 export function AppDetail() {
   const { id } = useParams()

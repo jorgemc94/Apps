@@ -4,6 +4,7 @@ import { IntroComponent } from "../../components/Intro/IntroComponent"
 import { DataTableComponent } from "../../components/DataTable/DataTableComponent"
 import { AppsGalleryComponent } from "../../components/AppsGallery/AppsGalleryComponent"
 import { PageWrapper, MainContent } from "./HomeStyled"
+import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 
 export function Home() {
   return (
