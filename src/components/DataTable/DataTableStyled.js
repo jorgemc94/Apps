@@ -31,6 +31,14 @@ export const TableHeader = styled.th`
   padding: 0.5rem;
   font-weight: 600;
   color: var(--text);
+
+  &:first-child {
+    width: 40%;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+  }
 `
 
 export const TableBody = styled.tbody``
@@ -39,6 +47,7 @@ export const TableData = styled.td`
   padding: 0.5rem;
   border-bottom: 1px solid var(--card);
   color: var(--text);
+  word-break: break-word;
 
   a {
     color: var(--primary);
@@ -47,6 +56,14 @@ export const TableData = styled.td`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  &:first-child {
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
   }
 `
 
@@ -62,7 +79,7 @@ export const StepsList = styled.ul`
     border-radius: 6px;
     list-style: decimal;
     display: flex;
-    flex-direction: column; /* texto arriba, imagen abajo */
+    flex-direction: column;
     gap: 0.6rem;
     word-break: break-word;
   }
