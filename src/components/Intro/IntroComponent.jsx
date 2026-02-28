@@ -1,5 +1,5 @@
-import { IntroWrapper, Title, Subtitle } from "./IntroStyled"
-
+import { IntroWrapper } from "./IntroStyled"
+import { Title, Subtitle } from "../../styles/Typography"
 export function IntroComponent() {
   return (
     <IntroWrapper>
