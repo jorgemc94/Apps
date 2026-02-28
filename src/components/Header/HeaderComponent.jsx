@@ -6,7 +6,7 @@ export function HeaderComponent() {
 
   return (
     <HeaderWrapper>
-      <h2>App Showcase</h2>
+      <h2>Actualizar listas</h2>
       <ThemeButton onClick={toggleTheme}>
         {darkMode ? "🌙" : "☀️"}
       </ThemeButton>
