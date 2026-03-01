@@ -25,7 +25,6 @@ export const WhatsApp = styled.a`
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgb(0 123 255 / 0.4);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   display: inline-flex;
