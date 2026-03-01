@@ -4,10 +4,19 @@ export const apps = [
     name: "XPRO",
     logo: "/ListApp/XPRO/logo.jpg",
     description: "Es la apliación que recomiendan, esta apliación solo esta para Android, hay TV´s con android otra opción para tenerla es mediante fire Tv, Andorid box...",
+    moredescription: "Si quereir podeis tener esta apliacion en el movil, os recuerdo que solo podéis verlo en un dispositivo a la vez, o bien en el móvil o bien en la televisión. Si os falla en la televisión podeis probar su funcionamiento en el móvil",
     steps: [
-      { image: "finance-step1.png", text: "Descarga la app desde la tienda oficial." },
-      { image: "finance-step2.png", text: "Regístrate con tu correo electrónico." },
-      { image: "finance-step3.png" }
+      { image: "/ListApp/XPRO/1.jpg", text: "Lo primero es ir a Google Play y descargar la aplicación Downloader by AFTVnews." },
+      { image: "/ListApp/XPRO/2.jpg", text: "Entrais dentro de la apliación y debeis pinchar en el cuadro enter a URL, Search Term, or Short Code (cuadro azul)." },
+      { image: "/ListApp/XPRO/3.jpg", text: "Escribiréis el código 3680877 y le pulsaréis la tecla Sig. (en vuestro teclado puede ser otra pero esta en el mismo sitio), está marcada en azul o le daréis hacia atrás y pulsareis Go que aparece debajo del cuadro donde se escribe el código (esto solo aparece en TV con android, fire tv, android TV... en móvil es como aparece en la foto)" },
+      { image: "/ListApp/XPRO/4.jpg", text: "Una vez descargada la aplicación, si es la primera vez que usais downloader, os aparece un mensaje para poder instalar la aplicación, debéis darle a ajustes (cuadro azul)" },
+      { image: "/ListApp/XPRO/5.jpg", text: "Aparecerá un check que debe estar como en la foto (cuadro azul) y justo al dar los permisos aparecerá una texto y debeis darle a instalar (cuadro verde)"},
+      { image: "/ListApp/XPRO/6.jpg", text: "La aplicación se instalará en vuestro dispositivo y le das a hecho (cuadro azul)"},
+      { image: "/ListApp/XPRO/7.jpg", text: "Aparecerá otro cuadro de información en el que debeis elegir Done (cuadro azul). Una vez acabado esto, Downloader lo podeis borrar ya que no hará falta"},
+      { image: "/ListApp/XPRO/8.jpg", text: "Entrais en la aplicacion y aparece un mensaje de Mobile o TV (si es movil pues elegir movil y si lo tienes en TV o Fire Tv, Android TV eleigir TV) y le dais a guardar (cuadro azul)"},
+      { image: "/ListApp/XPRO/9.jpg", text: "Aquí debeis poner vuestro usuario y contraseña, hay 3 cuadros, Cualquier nombre: yo suelo poner mi nombre(cuadro azul), Usuario: vuestro usuario de la lista IPTV(cuadro verde), Contraseña: vuestra contraseña de la lista IPTV(cuadro naranaja) y por ultimo le das a enter (cuadro amarillo)"},
+      { image: "/ListApp/XPRO/10.jpg", text: "Aqui debeis descargar todo el contenido que incleye la lista, en movil pulsando en cada cuadro y automaticamente se descargara y en TV tendréis que ir cuadro a cuadro y darlo al Ok en el mando para que se descargue"},
+      { image: "/ListApp/XPRO/5.jpg", text: "Aparecerá un check que debe estar como en la foto (cuadro azul) y justo al dar los permisos aparecerá una texto y debeis darle a instalar (cuadro verde)"},
     ]
   },
   {

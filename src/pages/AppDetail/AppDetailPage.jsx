@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { apps } from "../../data/apps"
 import { StepsContainer, StepWrapper, PageWrapper } from "./AppDetailStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
-import { Title } from "../../styles/Typography"
+import { Subtitle, Title } from "../../styles/Typography"
 
 export function AppDetail() {
   const { id } = useParams()
@@ -20,6 +20,7 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
+        <Subtitle>{app.moredescription}</Subtitle>
         <StepsContainer>
           {app.steps.map((step, index) => (
             <StepWrapper
