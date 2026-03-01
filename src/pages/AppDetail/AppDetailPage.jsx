@@ -20,18 +20,22 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
-
         <StepsContainer>
           {app.steps.map((step, index) => (
             <StepWrapper
               key={index}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.2 }}
-            >
-              {step.text && <p>{step.text}</p>}
+              transition={{ duration: 0.4, delay: index * 0.2 }}>
+              {(step.text || step.link) && (
+                <div className="text-link-wrapper">
+                  {step.text && <p>{step.text}</p>}
+                  {step.link && (
+                    <a href={step.link} target="_blank" rel="noopener noreferrer"> {step.linkLabel}</a>
+                  )}
+                </div>
+              )}
               {step.image && <img src={step.image} alt={`Step ${index + 1}`} />}
-              {step.link && <a href={step.link} target="_blank" rel="noopener noreferrer"> {step.linkLabel} </a>}
             </StepWrapper>
           ))}
         </StepsContainer>
