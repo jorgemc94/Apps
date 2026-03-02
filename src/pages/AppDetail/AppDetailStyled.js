@@ -3,13 +3,22 @@ import { motion } from "framer-motion"
 
 export const PageWrapper = styled.div`
   padding: 1rem;
+
+  @media (max-width: 1023px) {
+    height: 100dvh;       /* altura total viewport en móvil */
+    overflow-y: hidden;   /* evitar scroll vertical global */
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const StepsContainer = styled.div`
   display: flex;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;   /* quitar scroll vertical */
   scroll-behavior: smooth;
   padding: 1rem 0;
+  flex: 1;              /* ocupa todo el alto disponible en móvil */
 
   & > div {
     flex: 0 0 100%;
@@ -17,9 +26,15 @@ export const StepsContainer = styled.div`
     justify-content: center;
   }
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   @media (min-width: 1024px) {
     flex-direction: column;
-    overflow: visible;
+    overflow-x: visible;
+    overflow-y: visible;
+    flex: unset;
     gap: 4rem;
 
     & > div {
@@ -88,6 +103,11 @@ export const StepWrapper = styled(motion.div)`
         text-align: left;
       }
     }
+  }
+
+  @media (max-width: 1023px) {
+    max-height: 100%;
+    overflow-y: auto;  /* permite scroll interno si contenido es alto */
   }
 
   @media (min-width: 1024px) {
