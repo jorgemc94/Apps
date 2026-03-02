@@ -19,7 +19,9 @@ const wiggle = keyframes`
 `
 
 export const WhatsApp = styled.a`
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 0;           /* quitamos padding horizontal */
+  width: 2.4%;
+  margin: 0 auto;                 /* ocupa todo el ancho */
   background-color: #25D366;
   color: #fff !important;
   font-weight: 600;
@@ -27,13 +29,14 @@ export const WhatsApp = styled.a`
   text-decoration: none;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
+
+  display: flex;               /* mejor que inline-flex */
+  justify-content: center;     /* centra horizontal */
+  align-items: center;         /* centra vertical */
 
   svg {
-    font-size: 1.2rem;
-    margin-right: 0.5rem;
+    font-size: 1.5rem;           /* más pequeño */
+    margin: 0;                 /* quitamos margen lateral */
     transition: transform 0.3s ease;
   }
 
@@ -47,4 +50,4 @@ export const WhatsApp = styled.a`
       animation: ${wiggle} 0.6s ease-in-out;
     }
   }
-`
+`;
