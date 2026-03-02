@@ -56,7 +56,7 @@ export const StepWrapper = styled(motion.div)`
 
   img {
     width: 100%;
-    max-width: 600px;
+    max-width: 300px;
     max-height: 400px;
     border-radius: 12px;
     margin-bottom: 1.5rem;
