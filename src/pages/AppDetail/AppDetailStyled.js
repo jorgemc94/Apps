@@ -7,27 +7,19 @@ export const PageWrapper = styled.div`
 
 export const StepsContainer = styled.div`
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  overflow: hidden;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   padding: 1rem 0;
 
   & > div {
     flex: 0 0 100%;
-    scroll-snap-align: center;
     display: flex;
     justify-content: center;
   }
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   @media (min-width: 1024px) {
     flex-direction: column;
-    overflow-x: visible;
-    scroll-snap-type: none;
+    overflow: visible;
     gap: 4rem;
 
     & > div {
@@ -45,6 +37,7 @@ export const StepWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   img {
     width: 100%;
@@ -65,10 +58,8 @@ export const StepWrapper = styled(motion.div)`
     p {
       margin: 0;
       text-align: center;
-      color: var(--text);
       font-size: 1.1rem;
       line-height: 1.6;
-      flex: 1;
     }
 
     a {
@@ -79,24 +70,20 @@ export const StepWrapper = styled(motion.div)`
       border-radius: 8px;
       text-decoration: none;
       box-shadow: 0 2px 8px rgb(0 123 255 / 0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      display: inline-block;
+      transition: all 0.3s ease;
       white-space: nowrap;
     }
 
-    a:hover,
-    a:focus {
+    a:hover {
       background-color: #6366f1;
       box-shadow: 0 4px 12px rgb(0 86 179 / 0.6);
-      outline: none;
     }
 
     @media (min-width: 1024px) {
       flex-direction: row;
       align-items: center;
       gap: 1.5rem;
-      
+
       p {
         text-align: left;
       }
@@ -113,4 +100,24 @@ export const StepWrapper = styled(motion.div)`
       margin: 0;
     }
   }
+`
+
+export const DotsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`
+
+export const Dot = styled.div`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: ${({ active }) => (active ? "#6366f1" : "#ccc")};
+  cursor: pointer;
+  transition: background 0.3s ease;
 `
