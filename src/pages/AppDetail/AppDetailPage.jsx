@@ -57,8 +57,7 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
-        <Subtitle>{app.moredescription}</Subtitle>
-
+        
         <StepsContainer
           ref={containerRef}
           onTouchStart={handleTouchStart}

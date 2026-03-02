@@ -4,7 +4,6 @@ export const apps = [
     name: "XPRO",
     logo: "/ListApp/XPRO/logo.jpg",
     description: "Es la aplicación recomendada. Solo está disponible para Android. Algunas TV tienen Android integrado; otra opción es usarla mediante Fire TV o Android TV Box.",
-    moredescription: "Si queréis, también podéis tener esta aplicación en el móvil. Os recuerdo que solo se puede utilizar en un dispositivo a la vez: o en el móvil o en la televisión. Si os falla en la televisión, podéis comprobar su funcionamiento en el móvil.",
     steps: [
       { image: "/ListApp/XPRO/1.jpg", text: "Lo primero es ir a Google Play y descargar la aplicación Downloader by AFTVnews." },
       { image: "/ListApp/XPRO/2.jpg", text: "Entrad en la aplicación y pulsad en el cuadro 'Enter a URL, Search Term, or Short Code' (cuadro azul)." },
