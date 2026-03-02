@@ -35,7 +35,7 @@ export const WhatsApp = styled.a`
   align-items: center;         
 
   svg {
-    font-size: 3rem;           
+    font-size: 2rem;           
     margin: 0;                 
     transition: transform 0.3s ease;
   }
