@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { apps } from "../../data/apps"
 import { StepsContainer, StepWrapper, PageWrapper, DotsWrapper, Dot } from "./AppDetailStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
@@ -12,6 +12,7 @@ export function AppDetail() {
   const containerRef = useRef(null)
   const touchStartX = useRef(0)
   const [currentStep, setCurrentStep] = useState(0)
+  const scrollTimeout = useRef(null)
 
   if (!app) return <p style={{ padding: "1rem" }}>App no encontrada</p>
 
@@ -29,6 +30,24 @@ export function AppDetail() {
     setCurrentStep(index)
   }
 
+  // Para snap automático al terminar scroll
+  const handleScroll = () => {
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current)
+
+    scrollTimeout.current = setTimeout(() => {
+      const container = containerRef.current
+      if (!container) return
+
+      const stepWidth = container.offsetWidth
+      const scrollLeft = container.scrollLeft
+
+      // Calcula el paso más cercano
+      const nearestStep = Math.round(scrollLeft / stepWidth)
+
+      goToStep(nearestStep)
+    }, 100)
+  }
+
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX
   }
@@ -36,13 +55,15 @@ export function AppDetail() {
   const handleTouchEnd = (e) => {
     const diff = touchStartX.current - e.changedTouches[0].clientX
 
-    if (Math.abs(diff) < 50) return
+    if (Math.abs(diff) < 50) {
+      // Si no hay swipe fuerte, solo snap al paso más cercano
+      handleScroll()
+      return
+    }
 
     if (diff > 0 && currentStep < app.steps.length - 1) {
       goToStep(currentStep + 1)
-    }
-
-    if (diff < 0 && currentStep > 0) {
+    } else if (diff < 0 && currentStep > 0) {
       goToStep(currentStep - 1)
     }
   }
@@ -57,11 +78,14 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
-        
+
+        <Subtitle>{app.moredescription}</Subtitle>
+
         <StepsContainer
           ref={containerRef}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          onScroll={handleScroll}
         >
           {app.steps.map((step, index) => (
             <StepWrapper key={index}>
