@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState } from "react"
 import { apps } from "../../data/apps"
 import { StepsContainer, StepWrapper, PageWrapper, DotsWrapper, Dot } from "./AppDetailStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
@@ -30,7 +30,7 @@ export function AppDetail() {
     setCurrentStep(index)
   }
 
-  // Para snap automático al terminar scroll
+  // Snap automático al terminar scroll
   const handleScroll = () => {
     if (scrollTimeout.current) clearTimeout(scrollTimeout.current)
 
@@ -41,7 +41,6 @@ export function AppDetail() {
       const stepWidth = container.offsetWidth
       const scrollLeft = container.scrollLeft
 
-      // Calcula el paso más cercano
       const nearestStep = Math.round(scrollLeft / stepWidth)
 
       goToStep(nearestStep)
@@ -56,7 +55,6 @@ export function AppDetail() {
     const diff = touchStartX.current - e.changedTouches[0].clientX
 
     if (Math.abs(diff) < 50) {
-      // Si no hay swipe fuerte, solo snap al paso más cercano
       handleScroll()
       return
     }
@@ -78,7 +76,6 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
-
         <Subtitle>{app.moredescription}</Subtitle>
 
         <StepsContainer
@@ -103,9 +100,7 @@ export function AppDetail() {
                   )}
                 </div>
               )}
-              {step.image && (
-                <img src={step.image} alt={`Step ${index + 1}`} />
-              )}
+              {step.image && <img src={step.image} alt={`Step ${index + 1}`} />}
             </StepWrapper>
           ))}
         </StepsContainer>
