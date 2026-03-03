@@ -147,44 +147,48 @@ export const apps = [
         text: "Descarga IPTV Streamer desde Google Play (Android) o App Store (iPhone / iPad)."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
+        image: "/ListApp/IPTVStreamer/2.jpg",
         text: "Si el sistema solicita permiso para enviar notificaciones, pulsa 'Permitir'."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
+        image: "/ListApp/IPTVStreamer/3.jpg",
         text: "📱 En móvil: pulsa 'Añadir proveedor de IPTV'.\n\n📺 En Fire TV o Android TV: entra en 'Settings' y después en 'Providers'."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
+        image: "/ListApp/IPTVStreamer/4.jpg",
         text: "📱 En móvil: selecciona 'Importar archivo M3U'.\n\n📺 En TV: pulsa 'Add an IPTV Provider'."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
+        image: "/ListApp/IPTVStreamer/5.jpg",
         text: "📱 En móvil: elige 'Import M3U file from URL'.\n\n📺 En TV: selecciona también 'Import M3U file from URL'."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
-        text: "Introduce un nombre identificativo (por ejemplo tu nombre y fecha de caducidad) y pega la URL completa de tu lista.\n\n⚠ Es importante que la dirección comience por http y no por https.\n\nDespués pulsa 'Import'."
+        image: "/ListApp/IPTVStreamer/6.jpg",
+        text: "Introduce un nombre identificativo (por ejemplo tu nombre y fecha de caducidad) y pega la URL completa de tu lista.\n\n 📺 En televisores puedes escanear el código QR que aparece en pantalla utilizando tu móvil. Así evitarás escribir la URL con el mando..\n\n ⚠ Es importante que la dirección comience por http y no por https.\n\nDespués pulsa 'Import'."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
-        text: "📺 En televisores puedes escanear el código QR que aparece en pantalla utilizando tu móvil. Así evitarás escribir la URL con el mando."
+        image: "/ListApp/IPTVStreamer/7.jpg",
+        text: "Una vez importada la lista:\n\n📱 En móvil: abre el menú (icono de tres líneas).\n\n📺 En TV: vuelve atrás dándole a retroceder en el mando."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
-        text: "Una vez importada la lista:\n\n📱 En móvil: accede a 'Live TV'.\n📺 En TV: vuelve atrás y entra en 'Live TV' para ver los canales."
+        image: "/ListApp/IPTVStreamer/8.jpg",
+        text: "Para acceder a ver los canales:\n\n📱 En móvil: accede a Inicio y aparecerá toda la lista cargada.\n\n📺 En TV: entra en 'Live TV' para ver los canales."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
-        text: "Para actualizar la lista:\n\n📱 En móvil: abre el menú (icono de tres líneas) y entra en 'Providers'.\n📺 En TV: entra en 'Settings' y después en 'Providers'."
+        image: "/ListApp/IPTVStreamer/9.jpg",
+        text: "Para actualizar la lista:\n\n📱 En móvil: abre el menú (icono de tres líneas) y entra en 'Provedores'.\n\n📺 En TV: entra en 'Settings' y después en 'Providers'."
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
-        text: "Como recomendación, es mejor eliminar listas antiguas para no acumular demasiadas:\n\n📱 En móvil: pulsa sobre la lista que quieres eliminar y selecciona 'Eliminar'.\n📺 En TV: selecciona la lista que quieres borrar y pulsa 'Delete'. Luego podrás añadirla nuevamente siguiendo el proceso de importación por URL."
+        image: "/ListApp/IPTVStreamer/10.jpg",
+        text: "Como recomendación, es mejor eliminar listas antiguas para no acumular demasiadas:\n\n📱 En móvil: pulsa sobre la lista que quieres eliminar.\n\n📺 En TV: selecciona la lista que quieres borrar"
       },
       {
-        image: "/ListApp/IPTVStreamer/1.jpg",
-        text: "Para añadir o actualizar la lista:\n\n📱 En móvil: pulsa el icono '+' en la parte superior derecha y repite el proceso desde 'Añadir un proveedor de IPTV'.\n📺 En TV: repite el proceso desde 'Add an IPTV Provider'."
+        image: "/ListApp/IPTVStreamer/11.jpg",
+        text: "Como recomendación, es mejor eliminar listas antiguas para no acumular demasiadas:\n\n📱 En móvil: Selecciona 'Eliminar'.\n\n📺 En TV: Pulsa 'Delete'. Luego podrás añadirla nuevamente siguiendo el proceso de importación por URL."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/12.jpg",
+        text: "Para añadir o actualizar la lista:\n\n📱 En móvil: pulsa el icono '+' en la parte superior derecha y repite el proceso desde 'Añadir un proveedor de IPTV'.\n\n📺 En TV: repite el proceso desde 'Add an IPTV Provider'."
       }
     ]
   }
