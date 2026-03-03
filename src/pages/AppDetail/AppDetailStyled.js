@@ -9,6 +9,10 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
+
+  @media (min-width: 1024px) {
+    overflow-y: auto;
+  }
 `
 
 export const StepsViewport = styled.div`
@@ -16,10 +20,11 @@ export const StepsViewport = styled.div`
   flex: 1;
   overflow: hidden;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 
-  @media (min-width: 1024px) {
-    overflow-y: auto;
-    overflow-x: hidden;
+@media (min-width: 1024px) {
+    overflow: visible;
   }
 `
 
@@ -51,8 +56,9 @@ export const StepWrapper = styled.div`
     height: auto;
     margin-bottom: 3rem;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    gap: 5em;
+    align-items: center;
   }
 
   img {
@@ -66,12 +72,12 @@ export const StepWrapper = styled.div`
 
     @media (min-width: 1024px) {
       max-width: 45%;
+      max-height: 450px;
       margin: 0;
     }
   }
 `
 
-/* NUEVO: contenedor del texto */
 export const StepText = styled.div`
   display: flex;
   flex-direction: column;
@@ -79,7 +85,6 @@ export const StepText = styled.div`
   width: 100%;
 `
 
-/* NUEVO: bloques diferenciados */
 export const TextBlock = styled.div`
   background: ${({ type }) =>
     type === "mobile"

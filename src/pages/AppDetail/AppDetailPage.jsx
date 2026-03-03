@@ -78,7 +78,6 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
-        <Subtitle>{app.description}</Subtitle>
 
         <StepsViewport
           onTouchStart={handleTouchStart}
