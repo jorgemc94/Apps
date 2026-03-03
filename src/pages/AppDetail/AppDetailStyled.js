@@ -16,12 +16,23 @@ export const StepsViewport = styled.div`
   flex: 1;
   overflow: hidden;
   width: 100%;
+
+  @media (min-width: 1024px) {
+    overflow-y: auto;     /* permitir scroll vertical */
+    overflow-x: hidden;
+  }
 `
 
 export const StepsTrack = styled(motion.div)`
   display: flex;
   width: 100%;
   height: 100%;
+  flex-direction: row;
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    height: auto;
+  }
 `
 
 export const StepWrapper = styled.div`
@@ -34,6 +45,12 @@ export const StepWrapper = styled.div`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+
+  @media (min-width: 1024px) {
+    flex: none;
+    height: auto;
+    margin-bottom: 3rem;
+  }
 
   img {
     max-width: 90%;   
