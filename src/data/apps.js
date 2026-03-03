@@ -1,53 +1,191 @@
 export const apps = [
-  {
+{
     id: "xpro",
     name: "XPRO",
     logo: "/ListApp/XPRO/logo.jpg",
-    description: "Es la aplicación recomendada. Solo está disponible para Android. Algunas TV tienen Android integrado; otra opción es usarla mediante Fire TV o Android TV Box.",
+    description:
+      "Es la aplicación recomendada. Disponible únicamente para dispositivos Android. Puede utilizarse en móviles, tablets, Smart TV con Android TV, Fire TV o Android TV Box.",
     steps: [
-      { image: "/ListApp/XPRO/1.jpg", text: "Lo primero es ir a Google Play y descargar la aplicación Downloader by AFTVnews." },
-      { image: "/ListApp/XPRO/2.jpg", text: "Entrad en la aplicación y pulsad en el cuadro 'Enter a URL, Search Term, or Short Code' (cuadro azul)." },
-      { image: "/ListApp/XPRO/3.jpg", text: "Escribid el código 3680877 y pulsad la tecla 'Siguiente' (puede variar según el teclado, pero está en el mismo lugar). También podéis pulsar 'Go', que aparece debajo del cuadro donde se escribe el código. En TV (Android TV, Fire TV, etc.) puede mostrarse ligeramente diferente." },
-      { image: "/ListApp/XPRO/4.jpg", text: "Una vez descargada la aplicación, si es la primera vez que usáis Downloader, aparecerá un mensaje solicitando permiso para instalar aplicaciones. Debéis pulsar en 'Ajustes' (cuadro azul)." },
-      { image: "/ListApp/XPRO/5.jpg", text: "Aparecerá una opción que debéis activar como en la imagen (cuadro azul). Tras conceder los permisos, aparecerá un mensaje y debéis pulsar en 'Instalar' (cuadro verde)." },
-      { image: "/ListApp/XPRO/6.jpg", text: "La aplicación se instalará en vuestro dispositivo. Cuando termine, pulsad en 'Hecho' (cuadro azul)." },
-      { image: "/ListApp/XPRO/7.jpg", text: "Aparecerá otro cuadro informativo donde debéis elegir 'Done' (cuadro azul). Una vez finalizado, podéis borrar Downloader, ya que no será necesario." },
-      { image: "/ListApp/XPRO/8.jpg", text: "Entrad en la aplicación y aparecerá un mensaje para elegir entre 'Mobile' o 'TV'. Seleccionad la opción correspondiente y pulsad en 'Guardar' (cuadro azul)." },
-      { image: "/ListApp/XPRO/9.jpg", text: "Aquí debéis introducir vuestro usuario y contraseña. Hay tres campos: Nombre (podéis poner vuestro nombre), Usuario (el usuario de vuestra lista IPTV) y Contraseña (la contraseña de la lista IPTV). Por último, pulsad 'Enter'." },
-      { image: "/ListApp/XPRO/10.jpg", text: "Aquí debéis descargar todo el contenido incluido en la lista. En móvil, pulsad cada cuadro y se descargará automáticamente. En TV, debéis seleccionar cada cuadro y pulsar 'OK' en el mando para iniciar la descarga." },
-      { image: "/ListApp/XPRO/11.jpg", text: "La aplicación actualiza las URL automáticamente. No obstante, si queréis hacerlo manualmente, en móvil pulsad los iconos de las flechas (cuadro azul). En TV, seleccionad el cuadro correspondiente, pulsad la flecha hacia arriba y después 'OK' para iniciar la actualización." },
-      { text: "Para ver el contenido, entrad en la sección deseada, normalmente 'TV en Directo', donde se cargarán los canales."}
+      {
+        image: "/ListApp/XPRO/1.jpg",
+        text: "Accede a Google Play y descarga la aplicación 'Downloader by AFTVnews'."
+      },
+      {
+        image: "/ListApp/XPRO/2.jpg",
+        text: "Abre la aplicación y pulsa en el cuadro azul que indica 'Enter a URL, Search Term, or Short Code'."
+      },
+      {
+        image: "/ListApp/XPRO/3.jpg",
+        text: "Introduce el código 3680877 y pulsa 'Go' o 'Siguiente'. En televisores la apariencia puede variar ligeramente."
+      },
+      {
+        image: "/ListApp/XPRO/4.jpg",
+        text: "Si es la primera vez que utilizas Downloader, el sistema solicitará permiso para instalar aplicaciones externas. Pulsa en 'Ajustes'."
+      },
+      {
+        image: "/ListApp/XPRO/5.jpg",
+        text: "Activa el permiso correspondiente y vuelve atrás. Después pulsa 'Instalar' para comenzar la instalación."
+      },
+      {
+        image: "/ListApp/XPRO/6.jpg",
+        text: "Espera a que finalice la instalación y pulsa 'Hecho'."
+      },
+      {
+        image: "/ListApp/XPRO/7.jpg",
+        text: "Pulsa 'Done'. A partir de este momento puedes eliminar Downloader si lo deseas."
+      },
+      {
+        image: "/ListApp/XPRO/8.jpg",
+        text: "Abre XPRO y selecciona el modo adecuado: 'Mobile' para móvil o 'TV' para televisión. Después pulsa 'Guardar'."
+      },
+      {
+        image: "/ListApp/XPRO/9.jpg",
+        text: "Introduce los datos proporcionados: Nombre (puede ser cualquiera), Usuario y Contraseña. Finalmente pulsa 'Enter'."
+      },
+      {
+        image: "/ListApp/XPRO/10.jpg",
+        text: "Descarga el contenido de la lista. En móvil basta con pulsar cada apartado. En TV debes seleccionarlo y pulsar 'OK' en el mando."
+      },
+      {
+        image: "/ListApp/XPRO/11.jpg",
+        text: "La aplicación se actualiza automáticamente. Si necesitas hacerlo manualmente, utiliza el icono de actualización (flechas circulares)."
+      },
+      {
+        text: "Para ver los canales, entra en la sección 'TV en Directo' o similar. El contenido se cargará automáticamente."
+      }
     ]
   },
   {
     id: "ssiptv",
     name: "SSIPTV",
     logo: "/ListApp/SSIPTV/logo.jpg",
-    description: "Esta aplicación funciona bastante bien. No todas las TV son compatibles. En televisores Samsung debe añadirse mediante USB.",
+    description:
+      "Aplicación estable compatible con muchas Smart TV. En algunos modelos Samsung puede requerir instalación mediante USB.",
     steps: [
-      { image: "/ListApp/SSIPTV/1.png", text: "Entrad en la aplicación en la TV y pulsad en el icono de configuración (círculo rojo)." },
-      { image: "/ListApp/SSIPTV/2.png", text: "Podéis cambiar el idioma a español desde la parte derecha (cuadro azul). Si ya está en español, pulsad en 'Obtener código' o 'Get Code' (cuadro verde). Guardad el código que aparezca para el siguiente paso. Después podéis cerrar la aplicación hasta completar la configuración." },
-      { text: "Acceded al siguiente enlace:", link: "https://ss-iptv.com/en/users/playlist", linkLabel: "Web SSIPTV"},
-      { image: "/ListApp/SSIPTV/3.png", text: "En esta página, introducid el código obtenido en el paso anterior (cuadro azul) y pulsad en 'ADD DEVICE'. Si no borráis el historial del navegador, este paso normalmente solo será necesario hacerlo una vez." },
-      { image: "/ListApp/SSIPTV/4.png", text: "Entrad en 'External Playlist' (cuadro azul). Aparecerá vuestra lista; pulsad en 'Edit' (cuadro verde)." },
-      { image: "/ListApp/SSIPTV/5.png", text: "Copiad la URL completa que teníais guardada y pegadla en el campo 'Source' (cuadro azul). Comprobad que empiece por http y no por https, ya que en caso contrario no funcionará. Después pulsad 'OK' (cuadro verde)." },
-      { image: "/ListApp/SSIPTV/6.png", text: "Por último, pulsad en 'SAVE' (cuadro azul) para que se actualice correctamente. Después podéis cerrar todo y volver a la TV para acceder a vuestra lista actualizada." }
+      {
+        image: "/ListApp/SSIPTV/1.png",
+        text: "Abre la aplicación y accede al icono de configuración (rueda dentada)."
+      },
+      {
+        image: "/ListApp/SSIPTV/2.png",
+        text: "Si lo deseas, cambia el idioma a español. Después pulsa 'Obtener código' (Get Code) y anota el código que aparece."
+      },
+      {
+        text: "Desde un ordenador o móvil, accede al siguiente enlace:",
+        link: "https://ss-iptv.com/en/users/playlist",
+        linkLabel: "Web oficial de SSIPTV"
+      },
+      {
+        image: "/ListApp/SSIPTV/3.png",
+        text: "Introduce el código y pulsa 'ADD DEVICE'."
+      },
+      {
+        image: "/ListApp/SSIPTV/4.png",
+        text: "Accede a 'External Playlist' y selecciona 'Edit'."
+      },
+      {
+        image: "/ListApp/SSIPTV/5.png",
+        text: "Pega tu URL completa en el campo 'Source'. Es importante que comience por http y no por https. Pulsa 'OK'."
+      },
+      {
+        image: "/ListApp/SSIPTV/6.png",
+        text: "Pulsa 'SAVE' para guardar los cambios. Después vuelve a la TV para acceder a tu lista actualizada."
+      }
     ]
   },
   {
     id: "iboplayer",
     name: "IBO Player",
     logo: "/ListApp/IboPlayer/logo.jpg",
-    description: "No conozco mucho esta aplicación, pero algunos usuarios la utilizan en su TV.",
+    description:
+      "Aplicación utilizada principalmente en Smart TV. Requiere activar el dispositivo previamente desde su página web.",
     steps: [
-      { image: "/ListApp/IboPlayer/1.png", text: "Entrad en la aplicación y pulsad en 'Settings' (cuadro rojo)." },
-      { image: "/ListApp/IboPlayer/2.png", text: "En esta pantalla, acceded a 'Account' (cuadro azul)." },
-      { image: "/ListApp/IboPlayer/3.png", text: "Aparecerá un cuadro con distinta información. Debéis anotar la 'Mac Address' y la 'Device Key'. Una vez hecho esto, podéis cerrar la aplicación hasta completar la configuración." },
-      { text: "Acceded al siguiente enlace:", link: "https://iboplayer.com/device/login", linkLabel: "Web Ibo Player Pro"},
-      { image: "/ListApp/IboPlayer/4.png", text: "Introducid la 'Mac Address' y la 'Device Key' obtenidas anteriormente, completad el captcha y pulsad 'Login'. Si no borráis el historial del navegador, este paso normalmente solo será necesario una vez." },
-      { image: "/ListApp/IboPlayer/5.png", text: "Pulsad en el icono del lápiz (cuadro azul) para actualizar la lista." },
-      { image: "/ListApp/IboPlayer/6.png", text: "Copiad la URL completa que teníais guardada y pegadla en el campo 'Playlist URL (M3U o M3U8)' (cuadro azul). Comprobad que empiece por http y no por https, ya que de lo contrario no funcionará. Después pulsad 'SAVE' (cuadro verde)." },
-      { image: "/ListApp/IboPlayer/7.png", text: "Por último, pulsad en 'Logout' (cuadro azul). Después podéis cerrar todo y volver a la TV para acceder a vuestra lista actualizada." }
+      {
+        image: "/ListApp/IboPlayer/1.png",
+        text: "Abre la aplicación y entra en 'Settings'."
+      },
+      {
+        image: "/ListApp/IboPlayer/2.png",
+        text: "Selecciona la opción 'Account'."
+      },
+      {
+        image: "/ListApp/IboPlayer/3.png",
+        text: "Anota los datos 'Mac Address' y 'Device Key' que aparecen en pantalla."
+      },
+      {
+        text: "Desde un navegador web accede a:",
+        link: "https://iboplayer.com/device/login",
+        linkLabel: "Web oficial IBO Player"
+      },
+      {
+        image: "/ListApp/IboPlayer/4.png",
+        text: "Introduce la Mac Address y la Device Key, completa el captcha y pulsa 'Login'."
+      },
+      {
+        image: "/ListApp/IboPlayer/5.png",
+        text: "Pulsa el icono del lápiz para editar o añadir tu lista."
+      },
+      {
+        image: "/ListApp/IboPlayer/6.png",
+        text: "Pega la URL en 'Playlist URL (M3U o M3U8)'. Debe comenzar por http. Después pulsa 'SAVE'."
+      },
+      {
+        image: "/ListApp/IboPlayer/7.png",
+        text: "Cierra sesión ('Logout') y vuelve a la TV. Tu lista estará disponible."
+      }
+    ]
+  },
+  {
+    id: "iptvstreamer",
+    name: "IPTV Streamer",
+    logo: "/ListApp/IPTVStreamer/logo.png",
+    description:
+      "Aplicación compatible con iPhone, iPad, Android, Fire TV y Android TV. Permite importar listas IPTV mediante enlace M3U.",
+    steps: [
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "Descarga IPTV Streamer desde Google Play (Android) o App Store (iPhone / iPad)."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "Si el sistema solicita permiso para enviar notificaciones, pulsa 'Permitir'."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "📱 En móvil: pulsa 'Añadir proveedor de IPTV'.\n\n📺 En Fire TV o Android TV: entra en 'Settings' y después en 'Providers'."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "📱 En móvil: selecciona 'Importar archivo M3U'.\n\n📺 En TV: pulsa 'Add an IPTV Provider'."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "📱 En móvil: elige 'Import M3U file from URL'.\n\n📺 En TV: selecciona también 'Import M3U file from URL'."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "Introduce un nombre identificativo (por ejemplo tu nombre y fecha de caducidad) y pega la URL completa de tu lista.\n\n⚠ Es importante que la dirección comience por http y no por https.\n\nDespués pulsa 'Import'."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "📺 En televisores puedes escanear el código QR que aparece en pantalla utilizando tu móvil. Así evitarás escribir la URL con el mando."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "Una vez importada la lista:\n\n📱 En móvil: accede a 'Live TV'.\n📺 En TV: vuelve atrás y entra en 'Live TV' para ver los canales."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "Para actualizar la lista:\n\n📱 En móvil: abre el menú (icono de tres líneas) y entra en 'Providers'.\n📺 En TV: entra en 'Settings' y después en 'Providers'."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "Como recomendación, es mejor eliminar listas antiguas para no acumular demasiadas:\n\n📱 En móvil: pulsa sobre la lista que quieres eliminar y selecciona 'Eliminar'.\n📺 En TV: selecciona la lista que quieres borrar y pulsa 'Delete'. Luego podrás añadirla nuevamente siguiendo el proceso de importación por URL."
+      },
+      {
+        image: "/ListApp/IPTVStreamer/1.jpg",
+        text: "Para añadir o actualizar la lista:\n\n📱 En móvil: pulsa el icono '+' en la parte superior derecha y repite el proceso desde 'Añadir un proveedor de IPTV'.\n📺 En TV: repite el proceso desde 'Add an IPTV Provider'."
+      }
     ]
   }
 ]

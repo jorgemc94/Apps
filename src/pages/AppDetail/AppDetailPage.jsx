@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { apps } from "../../data/apps"
-import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar } from "./AppDetailStyled"
+import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar, StepText, TextBlock, StepParagraph, StyledLink } from "./AppDetailStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 import { Subtitle, Title } from "../../styles/Typography"
 import { motion } from "framer-motion"
@@ -52,6 +52,22 @@ export function AppDetail() {
 
   const progress = ((currentStep + 1) / app.steps.length) * 100
 
+  const renderFormattedText = (text) => {
+    const blocks = text.split("\n\n")
+
+    return blocks.map((block, i) => {
+      let type = null
+      if (block.trim().startsWith("📱")) type = "mobile"
+      if (block.trim().startsWith("📺")) type = "tv"
+
+      return (
+        <TextBlock key={i} type={type}>
+          <StepParagraph>{block}</StepParagraph>
+        </TextBlock>
+      )
+    })
+  }
+
   return (
     <PageTransition
       variants={pageVariants}
@@ -62,7 +78,7 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
-        <Subtitle>{app.moredescription}</Subtitle>
+        <Subtitle>{app.description}</Subtitle>
 
         <StepsViewport
           onTouchStart={handleTouchStart}
@@ -76,19 +92,21 @@ export function AppDetail() {
             {app.steps.map((step, index) => (
               <StepWrapper key={index}>
                 {(step.text || step.link) && (
-                  <div className="text-link-wrapper">
-                    {step.text && <p>{step.text}</p>}
+                  <StepText>
+                    {step.text && renderFormattedText(step.text)}
+
                     {step.link && (
-                      <a
+                      <StyledLink
                         href={step.link}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         {step.linkLabel}
-                      </a>
+                      </StyledLink>
                     )}
-                  </div>
+                  </StepText>
                 )}
+
                 {step.image && (
                   <img
                     src={step.image}
