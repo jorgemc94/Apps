@@ -5,7 +5,7 @@ import { Title, Subtitle } from "../../styles/Typography"
 export function IntroComponent() {
   return (
     <IntroWrapper>
-      <Title>ACTUALIZAR LISTAS</Title>
+      <Title>Contacto</Title>
       <Subtitle>
         Esto es una guía de cómo actualizar las listas y ponerlas en vuestras aplicaciones. 
         Si esto no os funciona, la solución es hablar a este teléfono de WhatsApp, no llaméis solo atiende por WhatsApp.
