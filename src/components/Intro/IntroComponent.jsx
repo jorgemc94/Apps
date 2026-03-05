@@ -1,5 +1,5 @@
-import { FaWhatsapp } from "react-icons/fa"
-import { IntroWrapper, WhatsApp } from "./IntroStyled"
+import { FaWhatsapp, FaTelegram } from "react-icons/fa"
+import { IntroWrapper, WhatsApp, Telegram } from "./IntroStyled"
 import { Title, Subtitle } from "../../styles/Typography"
 
 export function IntroComponent() {
@@ -18,6 +18,10 @@ export function IntroComponent() {
       <WhatsApp href="https://wa.me/8613316900374" target="_blank">
         <FaWhatsapp />
       </WhatsApp>
+      <Subtitle>Si tenéis telegram y os interesa saber las últimas novedades, si el servicio esta caído, etc... Podéis uniros aquí:</Subtitle>
+      < Telegram href="https://t.me/+NbgTLBVrt-ZjODQ1" target="_blank">
+        <FaTelegram />      
+      </Telegram>
     </IntroWrapper>
   )
 }
