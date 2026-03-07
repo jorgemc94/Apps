@@ -23,7 +23,7 @@ export const StepsViewport = styled.div`
   max-width: 900px;
   margin: 0 auto;
 
-@media (min-width: 1024px) {
+  @media (min-width: 1024px) {
     overflow: visible;
   }
 `
@@ -143,4 +143,19 @@ export const ProgressBar = styled(motion.div)`
   height: 100%;
   background: #6366f1;
   width: 0%;
+`
+
+export const VideoWrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+  margin: 1rem auto 2rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+`
+
+export const StyledVideo = styled.video`
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
 `

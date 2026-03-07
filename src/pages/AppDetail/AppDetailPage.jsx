@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { apps } from "../../data/apps"
-import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar, StepText, TextBlock, StepParagraph, StyledLink } from "./AppDetailStyled"
+import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar, StepText, TextBlock, StepParagraph, StyledLink, VideoWrapper, StyledVideo } from "./AppDetailStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
-import { Subtitle, Title } from "../../styles/Typography"
+import { Title } from "../../styles/Typography"
 import { motion } from "framer-motion"
 
 export function AppDetail() {
@@ -14,10 +14,7 @@ export function AppDetail() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024)
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024)
-    }
-
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024)
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
@@ -25,15 +22,11 @@ export function AppDetail() {
   if (!app) return <p style={{ padding: "1rem" }}>App no encontrada</p>
 
   const nextStep = () => {
-    if (currentStep < app.steps.length - 1) {
-      setCurrentStep((prev) => prev + 1)
-    }
+    if (currentStep < app.steps.length - 1) setCurrentStep((prev) => prev + 1)
   }
 
   const prevStep = () => {
-    if (currentStep > 0) {
-      setCurrentStep((prev) => prev - 1)
-    }
+    if (currentStep > 0) setCurrentStep((prev) => prev - 1)
   }
 
   let touchStartX = 0
@@ -54,7 +47,6 @@ export function AppDetail() {
 
   const renderFormattedText = (text) => {
     const blocks = text.split("\n\n")
-
     return blocks.map((block, i) => {
       let type = null
       if (block.trim().startsWith("📱")) type = "mobile"
@@ -78,6 +70,13 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
+        {app.video && (
+          <VideoWrapper>
+            <StyledVideo controls>
+              <source src={app.video} type="video/mp4" />
+            </StyledVideo>
+          </VideoWrapper>
+        )}
 
         <StepsViewport
           onTouchStart={handleTouchStart}
