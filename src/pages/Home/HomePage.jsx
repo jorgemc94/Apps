@@ -5,6 +5,7 @@ import { DataTableComponent } from "../../components/DataTable/DataTableComponen
 import { AppsGalleryComponent } from "../../components/AppsGallery/AppsGalleryComponent"
 import { PageWrapper, MainContent } from "./HomeStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
+import { IntroComponent } from "../../components/Intro/IntroComponent"
 
 export function Home() {
   return (
@@ -18,6 +19,7 @@ export function Home() {
       <PageWrapper>
         <HeaderComponent />
         <MainContent>
+          <IntroComponent />
           <DataTableComponent />
           <AppsGalleryComponent />
           <ContactComponent />
