@@ -1,6 +1,6 @@
 import { HeaderComponent } from "../../components/Header/HeaderComponent"
 import { FooterComponent } from "../../components/Footer/FooterComponent"
-import { IntroComponent } from "../../components/Intro/IntroComponent"
+import { ContactComponent } from "../../components/Contact/ContactComponent"
 import { DataTableComponent } from "../../components/DataTable/DataTableComponent"
 import { AppsGalleryComponent } from "../../components/AppsGallery/AppsGalleryComponent"
 import { PageWrapper, MainContent } from "./HomeStyled"
@@ -18,9 +18,9 @@ export function Home() {
       <PageWrapper>
         <HeaderComponent />
         <MainContent>
-          <IntroComponent />
           <DataTableComponent />
           <AppsGalleryComponent />
+          <ContactComponent />
         </MainContent>
         <FooterComponent />
       </PageWrapper>

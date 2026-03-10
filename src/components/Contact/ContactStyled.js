@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components"
 
-export const IntroWrapper = styled.section`
+export const ContactWrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;

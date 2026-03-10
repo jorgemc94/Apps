@@ -1,10 +1,10 @@
 import { FaWhatsapp, FaTelegram } from "react-icons/fa"
-import { IntroWrapper, WhatsApp, Telegram } from "./IntroStyled"
+import { ContactWrapper, WhatsApp, Telegram } from "./ContactStyled"
 import { Title, Subtitle } from "../../styles/Typography"
 
-export function IntroComponent() {
+export function ContactComponent() {
   return (
-    <IntroWrapper>
+    <ContactWrapper>
       <Title>Contacto</Title>
       <Subtitle>
         Esto es una guía de cómo actualizar las listas y ponerlas en vuestras aplicaciones. 
@@ -22,6 +22,6 @@ export function IntroComponent() {
       < Telegram href="https://t.me/+NbgTLBVrt-ZjODQ1" target="_blank">
         <FaTelegram />      
       </Telegram>
-    </IntroWrapper>
+    </ContactWrapper>
   )
 }
