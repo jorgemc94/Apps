@@ -70,14 +70,6 @@ export function AppDetail() {
     >
       <PageWrapper>
         <Title>{app.name}</Title>
-        {app.video && (
-          <VideoWrapper>
-            <StyledVideo controls>
-              <source src={app.video} type="video/mp4" />
-            </StyledVideo>
-          </VideoWrapper>
-        )}
-
         <StepsViewport
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
