@@ -44,7 +44,7 @@ export const ChoiceButton = styled.button`
 
 export const VideoWrapper = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 700px; // reducido para escritorio
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -53,6 +53,7 @@ export const VideoWrapper = styled.div`
 
   video {
     width: 100%;
+    max-height: 400px; // limitar altura
     border-radius: 12px;
   }
 `
@@ -67,6 +68,7 @@ export const StepsViewport = styled.div`
 
   @media (min-width: 1024px) {
     overflow: visible;
+    max-height: 80vh; // limitar altura para no hacer scroll
   }
 `
 
@@ -96,10 +98,11 @@ export const StepWrapper = styled.div`
   @media (min-width: 1024px) {
     flex: none;
     height: auto;
-    margin-bottom: 3rem;
+    max-width: 900px; // limitar ancho
+    margin-bottom: 2.5rem;
     flex-direction: row;
     justify-content: center;
-    gap: 5em;
+    gap: 3rem; // menor gap
     align-items: center;
   }
 
@@ -114,7 +117,7 @@ export const StepWrapper = styled.div`
 
     @media (min-width: 1024px) {
       max-width: 45%;
-      max-height: 450px;
+      max-height: 400px; // ajustar altura
       margin: 0;
     }
   }
@@ -123,8 +126,12 @@ export const StepWrapper = styled.div`
 export const StepText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem; // menor gap
   width: 100%;
+
+  @media (min-width: 1024px) {
+    width: 50%; // ocupar solo mitad del StepWrapper
+  }
 `
 
 export const TextBlock = styled.div`

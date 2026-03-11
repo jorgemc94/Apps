@@ -98,6 +98,7 @@ export const apps = [
     id: "iboplayer",
     name: "IBO Player",
     logo: "/ListApp/IboPlayer/logo.jpg",
+    video: "/ListApp/IboPlayer/IBO2.mp4",
     description:
       "Aplicación utilizada principalmente en Smart TV. Requiere activar el dispositivo previamente desde su página web.",
     steps: [
