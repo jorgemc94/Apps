@@ -59,6 +59,7 @@ export const apps = [
     id: "ssiptv",
     name: "SSIPTV",
     logo: "/ListApp/SSIPTV/logo.jpg",
+    video: "/ListApp/SSIPTV/SSIPTV.mp4",
     description:
       "Aplicación estable compatible con muchas Smart TV. En algunos modelos Samsung puede requerir instalación mediante USB.",
     steps: [

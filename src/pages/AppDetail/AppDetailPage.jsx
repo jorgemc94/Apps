@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { apps } from "../../data/apps"
-import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar, StepText, TextBlock, StepParagraph, StyledLink } from "./AppDetailStyled"
+import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar, StepText, TextBlock, StepParagraph, StyledLink, ChoiceScreen, ChoiceButton, VideoWrapper } from "./AppDetailStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 import { Title } from "../../styles/Typography"
 import { motion } from "framer-motion"
 
 export function AppDetail() {
+
   const { id } = useParams()
   const app = apps.find((a) => a.id === id)
 
   const [currentStep, setCurrentStep] = useState(0)
+  const [view, setView] = useState("choice")
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024)
 
   useEffect(() => {
@@ -22,11 +24,13 @@ export function AppDetail() {
   if (!app) return <p style={{ padding: "1rem" }}>App no encontrada</p>
 
   const nextStep = () => {
-    if (currentStep < app.steps.length - 1) setCurrentStep((prev) => prev + 1)
+    if (currentStep < app.steps.length - 1)
+      setCurrentStep((prev) => prev + 1)
   }
 
   const prevStep = () => {
-    if (currentStep > 0) setCurrentStep((prev) => prev - 1)
+    if (currentStep > 0)
+      setCurrentStep((prev) => prev - 1)
   }
 
   let touchStartX = 0
@@ -47,8 +51,10 @@ export function AppDetail() {
 
   const renderFormattedText = (text) => {
     const blocks = text.split("\n\n")
+
     return blocks.map((block, i) => {
       let type = null
+
       if (block.trim().startsWith("📱")) type = "mobile"
       if (block.trim().startsWith("📺")) type = "tv"
 
@@ -69,54 +75,105 @@ export function AppDetail() {
       transition={pageTransition}
     >
       <PageWrapper>
+
         <Title>{app.name}</Title>
-        <StepsViewport
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <StepsTrack
-            as={motion.div}
-            animate={isDesktop ? { x: 0 } : { x: `-${currentStep * 100}%` }}
-            transition={{ type: "tween", duration: 0.3 }}
-          >
-            {app.steps.map((step, index) => (
-              <StepWrapper key={index}>
-                {(step.text || step.link) && (
-                  <StepText>
-                    {step.text && renderFormattedText(step.text)}
 
-                    {step.link && (
-                      <StyledLink
-                        href={step.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {step.linkLabel}
-                      </StyledLink>
-                    )}
-                  </StepText>
-                )}
+        {view === "choice" && (
+          <ChoiceScreen>
 
-                {step.image && (
-                  <img
-                    src={step.image}
-                    alt={`Paso ${index + 1}`}
-                  />
-                )}
-              </StepWrapper>
-            ))}
-          </StepsTrack>
-        </StepsViewport>
+            {app.video && (
+              <ChoiceButton onClick={() => setView("video")}>
+                🎬 Ver vídeo completo
+              </ChoiceButton>
+            )}
 
-        {!isDesktop && (
-          <ProgressBarWrapper>
-            <ProgressBar
-              as={motion.div}
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.3 }}
-            />
-          </ProgressBarWrapper>
+            <ChoiceButton onClick={() => setView("steps")}>
+              📖 Seguir guía paso a paso
+            </ChoiceButton>
+
+          </ChoiceScreen>
         )}
+
+        {view === "video" && app.video && (
+          <VideoWrapper>
+
+            <video controls poster={app.logo}>
+              <source src={app.video} type="video/mp4" />
+            </video>
+
+            <ChoiceButton onClick={() => setView("choice")}>
+              ← Volver
+            </ChoiceButton>
+
+          </VideoWrapper>
+        )}
+
+        {view === "steps" && (
+          <>
+            <StepsViewport
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <StepsTrack
+                as={motion.div}
+                animate={isDesktop ? { x: 0 } : { x: `-${currentStep * 100}%` }}
+                transition={{ type: "tween", duration: 0.3 }}
+              >
+
+                {app.steps.map((step, index) => (
+                  <StepWrapper key={index}>
+
+                    {(step.text || step.link) && (
+                      <StepText>
+
+                        {step.text && renderFormattedText(step.text)}
+
+                        {step.link && (
+                          <StyledLink
+                            href={step.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {step.linkLabel}
+                          </StyledLink>
+                        )}
+
+                      </StepText>
+                    )}
+
+                    {step.image && (
+                      <img
+                        src={step.image}
+                        alt={`Paso ${index + 1}`}
+                      />
+                    )}
+
+                  </StepWrapper>
+                ))}
+
+              </StepsTrack>
+            </StepsViewport>
+
+            {!isDesktop && (
+              <ProgressBarWrapper>
+                <ProgressBar
+                  as={motion.div}
+                  animate={{ width: `${progress}%` }}
+                  transition={{ duration: 0.3 }}
+                />
+              </ProgressBarWrapper>
+            )}
+
+            <ChoiceButton
+              style={{ marginTop: "1rem" }}
+              onClick={() => setView("choice")}
+            >
+              ← Volver
+            </ChoiceButton>
+
+          </>
+        )}
+
       </PageWrapper>
     </PageTransition>
   )
