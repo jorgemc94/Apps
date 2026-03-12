@@ -1,11 +1,12 @@
 import styled from "styled-components"
 
 export const TableWrapper = styled.section`
-  margin: 1rem 0;
   width: 100%;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+
+  @media (max-width: 1023px) {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
 `
 
 export const Table = styled.table`

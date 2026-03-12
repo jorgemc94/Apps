@@ -4,7 +4,7 @@ import { urls } from "../../data/url"
 export const UpdateURL = [
   {
     content: (
-      <TableWrapper>
+      <TableWrapper style={{ maxHeight: "50vh", overflowY: "auto" }}>
         <StepsList>
           <li>
             Teniendo vuestro usuario y contraseña, abrir el enlace dependiendo de cómo empiece vuestro usuario. 

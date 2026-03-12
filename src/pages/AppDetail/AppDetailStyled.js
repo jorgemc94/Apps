@@ -49,6 +49,13 @@ export const StepWrapper = styled.div`
   padding: 0.5rem;
   box-sizing: border-box;
 
+  /* Para los pasos de tabla (UpdateURL) en móvil */
+  ${({ hasTable }) =>
+    hasTable &&
+    `
+    overflow-y: auto;
+  `}
+
   @media (min-width: 1024px) {
     flex-direction: row;
     justify-content: flex-start;
@@ -56,6 +63,15 @@ export const StepWrapper = styled.div`
     height: auto;
     max-width: 900px;
     margin: 0 auto 2rem auto;
+
+    /* En desktop, mostrar la tabla completa sin scroll */
+    ${({ hasTable }) =>
+      hasTable &&
+      `
+      overflow: visible;
+      flex-direction: column; /* para que la tabla quede arriba y texto abajo si quieres */
+      align-items: flex-start;
+    `}
   }
 `;
 
@@ -93,13 +109,23 @@ export const StepText = styled.div`
   gap: 0.5rem;
   flex: 0 0 30%;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: flex-start;
+
+  /* Para pasos con tabla en móvil */
+  ${({ hasTable }) =>
+    hasTable &&
+    `
+    max-height: 50%;
+    overflow-y: auto;
+  `}
 
   @media (min-width: 1024px) {
     flex: none;
-    width: calc(100% - 500px);
-    justify-content: center;
-    margin-left: 1em;
+    width: ${({ hasTable }) => (hasTable ? "100%" : "calc(100% - 500px)")};
+    justify-content: ${({ hasTable }) => (hasTable ? "flex-start" : "center")};
+    margin-left: ${({ hasTable }) => (hasTable ? "0" : "1em")};
+    max-height: none;
+    overflow: visible;
   }
 `;
 

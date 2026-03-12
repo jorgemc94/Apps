@@ -2,7 +2,20 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { apps } from "../../data/apps";
 import { commonstep } from "../../data/commonstep";
-import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, StepVideo, StepImage, StepText, TextBlock, StepParagraph, StyledLink, ProgressBarWrapper, ProgressBar } from "./AppDetailStyled";
+import { 
+  PageWrapper, 
+  StepsViewport, 
+  StepsTrack, 
+  StepWrapper, 
+  StepVideo, 
+  StepImage, 
+  StepText, 
+  TextBlock, 
+  StepParagraph, 
+  StyledLink, 
+  ProgressBarWrapper, 
+  ProgressBar 
+} from "./AppDetailStyled";
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition";
 import { Title } from "../../styles/Typography";
 import { motion } from "framer-motion";
@@ -88,18 +101,22 @@ export function AppDetail() {
             animate={isDesktop ? { x: 0 } : { x: `-${currentStep * 100}%` }}
             transition={{ type: "tween", duration: 0.3 }}
           >
-            {allSteps.map((step, index) => (
-              <StepWrapper key={index}>
-                {step.video && <StepVideo src={step.video} controls playsInline preload="auto" />}
-                {!step.video && step.image && <StepImage src={step.image} alt={`Paso ${index + 1}`} />}
-                {(step.text || step.link) && (
-                  <StepText>
-                    {step.text && renderFormattedText(step.text)}
-                    {step.link && <StyledLink href={step.link} target="_blank" rel="noopener noreferrer">{step.linkLabel}</StyledLink>}
-                  </StepText>
-                )}
-              </StepWrapper>
-            ))}
+            {allSteps.map((step, index) => {
+              const isTableStep = step.content !== undefined;
+              return (
+                <StepWrapper key={index} hasTable={isTableStep}>
+                  {step.video && <StepVideo src={step.video} controls playsInline preload="auto" />}
+                  {!step.video && step.image && <StepImage src={step.image} alt={`Paso ${index + 1}`} />}
+                  {(step.text || step.link || step.content) && (
+                    <StepText hasTable={isTableStep}>
+                      {step.text && renderFormattedText(step.text)}
+                      {step.link && <StyledLink href={step.link} target="_blank" rel="noopener noreferrer">{step.linkLabel}</StyledLink>}
+                      {step.content && step.content}
+                    </StepText>
+                  )}
+                </StepWrapper>
+              );
+            })}
           </StepsTrack>
         </StepsViewport>
 
