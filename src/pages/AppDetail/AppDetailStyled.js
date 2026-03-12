@@ -1,95 +1,107 @@
-import styled from "styled-components"
-import { motion } from "framer-motion"
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const PageWrapper = styled.div`
   width: 100%;
   height: 100dvh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   padding: 1rem;
+  overflow: hidden;
 
   @media (min-width: 1024px) {
     overflow-y: auto;
   }
-`
+`;
 
 export const StepsViewport = styled.div`
-  position: relative;
-  flex: 1;
-  overflow: hidden;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  height: 100dvh;
+  overflow: hidden;
 
   @media (min-width: 1024px) {
+    height: auto;
+    max-width: 900px;
+    margin: 0 auto;
     overflow: visible;
-    max-height: 80vh; // limitar altura para no hacer scroll
   }
-`
+`;
 
 export const StepsTrack = styled(motion.div)`
   display: flex;
   width: 100%;
   height: 100%;
-  flex-direction: row;
+  flex-direction: column;
 
   @media (min-width: 1024px) {
     flex-direction: column;
     height: auto;
   }
-`
+`;
 
 export const StepWrapper = styled.div`
-  flex: 0 0 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+  height: 100dvh;
   width: 100%;
-  height: 100%;
+  padding: 0.5rem;
   box-sizing: border-box;
 
   @media (min-width: 1024px) {
-    flex: none;
-    height: auto;
-    max-width: 900px; // limitar ancho
-    margin-bottom: 2.5rem;
     flex-direction: row;
-    justify-content: center;
-    gap: 3rem; // menor gap
+    justify-content: flex-start;
     align-items: center;
-  }
-
-  img {
-    max-width: 90%;
-    max-height: 70%;
-    width: auto;
     height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-
-    @media (min-width: 1024px) {
-      max-width: 45%;
-      max-height: 400px; // ajustar altura
-      margin: 0;
-    }
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
   }
-`
+`;
+
+export const StepVideo = styled.video`
+  width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+  flex: 0 0 70%;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: 1024px) {
+    flex: none;
+    max-height: 400px;
+    margin-bottom: 0;
+  }
+`;
+
+export const StepImage = styled.img`
+  width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+  flex: 0 0 70%;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: 1024px) {
+    flex: none;
+    max-height: 400px;
+    margin-bottom: 0;
+  }
+`;
 
 export const StepText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; // menor gap
+  gap: 0.5rem;
+  flex: 0 0 30%;
   width: 100%;
+  justify-content: flex-end;
 
   @media (min-width: 1024px) {
-    width: 50%; // ocupar solo mitad del StepWrapper
+    flex: none;
+    width: calc(100% - 500px);
+    justify-content: center;
+    margin-left: 1em;
   }
-`
+`;
 
 export const TextBlock = styled.div`
   background: ${({ type }) =>
@@ -108,7 +120,7 @@ export const TextBlock = styled.div`
 
   padding: ${({ type }) => (type ? "0.75rem 1rem" : "0")};
   border-radius: 8px;
-`
+`;
 
 export const StepParagraph = styled.p`
   margin: 0;
@@ -120,7 +132,7 @@ export const StepParagraph = styled.p`
   @media (min-width: 1024px) {
     text-align: left;
   }
-`
+`;
 
 export const StyledLink = styled.a`
   padding: 0.5rem 1rem;
@@ -134,7 +146,7 @@ export const StyledLink = styled.a`
   @media (min-width: 1024px) {
     align-self: flex-start;
   }
-`
+`;
 
 export const ProgressBarWrapper = styled.div`
   height: 6px;
@@ -143,10 +155,10 @@ export const ProgressBarWrapper = styled.div`
   border-radius: 3px;
   overflow: hidden;
   margin-top: 1rem;
-`
+`;
 
 export const ProgressBar = styled(motion.div)`
   height: 100%;
   background: #6366f1;
   width: 0%;
-`
+`;
