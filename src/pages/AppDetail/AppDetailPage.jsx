@@ -90,11 +90,15 @@ export function AppDetail() {
                   <video
                     src={step.video}
                     controls
+                    playsInline  
+                    preload="auto" 
                     style={{ width: "100%", borderRadius: "12px", marginBottom: "1rem" }}
-                  />
+                  >
+                    Tu navegador no soporta videos HTML5.
+                  </video>
                 )}
                 {!step.video && step.image && (
-                  <img src={step.image} alt={`Paso ${index + 1}`} />
+                  <img src={step.image} alt={`Paso ${index + 1}`} style={{ width: "100%", borderRadius: "12px", marginBottom: "1rem" }} />
                 )}
 
                 {(step.text || step.link) && (
