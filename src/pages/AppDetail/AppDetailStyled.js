@@ -30,31 +30,24 @@ export const StepsViewport = styled.div`
 export const StepsTrack = styled(motion.div)`
   display: flex;
   width: 100%;
+  flex-direction: row; 
   height: 100%;
-  flex-direction: column;
 
   @media (min-width: 1024px) {
-    flex-direction: column;
+    flex-direction: column
     height: auto;
   }
 `;
 
 export const StepWrapper = styled.div`
+  flex: 0 0 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100dvh;
   width: 100%;
   padding: 0.5rem;
   box-sizing: border-box;
-
-  /* Para los pasos de tabla (UpdateURL) en móvil */
-  ${({ hasTable }) =>
-    hasTable &&
-    `
-    overflow-y: auto;
-  `}
 
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -63,23 +56,14 @@ export const StepWrapper = styled.div`
     height: auto;
     max-width: 900px;
     margin: 0 auto 2rem auto;
-
-    /* En desktop, mostrar la tabla completa sin scroll */
-    ${({ hasTable }) =>
-      hasTable &&
-      `
-      overflow: visible;
-      flex-direction: column; /* para que la tabla quede arriba y texto abajo si quieres */
-      align-items: flex-start;
-    `}
   }
 `;
 
 export const StepVideo = styled.video`
   width: 100%;
+  max-height: 50vh;
   border-radius: 12px;
   object-fit: contain;
-  flex: 0 0 70%;
   margin-bottom: 0.5rem;
 
   @media (min-width: 1024px) {
@@ -91,9 +75,9 @@ export const StepVideo = styled.video`
 
 export const StepImage = styled.img`
   width: 100%;
+  max-height: 50vh;
   border-radius: 12px;
   object-fit: contain;
-  flex: 0 0 70%;
   margin-bottom: 0.5rem;
 
   @media (min-width: 1024px) {
@@ -104,28 +88,31 @@ export const StepImage = styled.img`
 `;
 
 export const StepText = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 0.5rem;
-  flex: 0 0 30%;
   width: 100%;
-  justify-content: flex-start;
-
-  /* Para pasos con tabla en móvil */
+  padding-bottom: 1rem;
   ${({ hasTable }) =>
     hasTable &&
     `
-    max-height: 50%;
+    max-height: 50vh;
     overflow-y: auto;
+    justify-content:
+    padding-bottom: 0;
   `}
 
   @media (min-width: 1024px) {
     flex: none;
+    flex-direction: column;
     width: ${({ hasTable }) => (hasTable ? "100%" : "calc(100% - 500px)")};
     justify-content: ${({ hasTable }) => (hasTable ? "flex-start" : "center")};
     margin-left: ${({ hasTable }) => (hasTable ? "0" : "1em")};
     max-height: none;
     overflow: visible;
+    padding-bottom: 0;
   }
 `;
 

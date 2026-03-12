@@ -1,21 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { apps } from "../../data/apps";
 import { commonstep } from "../../data/commonstep";
-import { 
-  PageWrapper, 
-  StepsViewport, 
-  StepsTrack, 
-  StepWrapper, 
-  StepVideo, 
-  StepImage, 
-  StepText, 
-  TextBlock, 
-  StepParagraph, 
-  StyledLink, 
-  ProgressBarWrapper, 
-  ProgressBar 
-} from "./AppDetailStyled";
+import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, StepVideo, StepImage, StepText, TextBlock, StepParagraph, StyledLink, ProgressBarWrapper, ProgressBar } from "./AppDetailStyled";
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition";
 import { Title } from "../../styles/Typography";
 import { motion } from "framer-motion";
@@ -27,6 +14,8 @@ export function AppDetail() {
 
   const [currentStep, setCurrentStep] = useState(0);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+
+  const stepRefs = useRef([]);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
@@ -70,6 +59,13 @@ export function AppDetail() {
     else if (diff < -50) prevStep();
   };
 
+  useEffect(() => {
+    if (!isDesktop && stepRefs.current[currentStep]) {
+      const textContainer = stepRefs.current[currentStep].querySelector("div[hasTable]");
+      if (textContainer) textContainer.scrollTop = 0;
+    }
+  }, [currentStep, isDesktop]);
+
   const progress = ((currentStep + 1) / allSteps.length) * 100;
 
   const renderFormattedText = text => {
@@ -104,13 +100,21 @@ export function AppDetail() {
             {allSteps.map((step, index) => {
               const isTableStep = step.content !== undefined;
               return (
-                <StepWrapper key={index} hasTable={isTableStep}>
+                <StepWrapper
+                  key={index}
+                  hasTable={isTableStep}
+                  ref={el => (stepRefs.current[index] = el)}
+                >
                   {step.video && <StepVideo src={step.video} controls playsInline preload="auto" />}
                   {!step.video && step.image && <StepImage src={step.image} alt={`Paso ${index + 1}`} />}
                   {(step.text || step.link || step.content) && (
                     <StepText hasTable={isTableStep}>
                       {step.text && renderFormattedText(step.text)}
-                      {step.link && <StyledLink href={step.link} target="_blank" rel="noopener noreferrer">{step.linkLabel}</StyledLink>}
+                      {step.link && (
+                        <StyledLink href={step.link} target="_blank" rel="noopener noreferrer">
+                          {step.linkLabel}
+                        </StyledLink>
+                      )}
                       {step.content && step.content}
                     </StepText>
                   )}
