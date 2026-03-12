@@ -3,7 +3,7 @@ import { Container, StepList, StepItem, Note } from "./IntroStyled";
 import { intro } from "../../data/intro";
 
 export function IntroComponent() {
-    const keywords = ["usuario", "contraseña", "URL", "Notas del móvil", "Google Chrome", "tabla", "imágenes", "foto de referencia", "códigos", "TV"];
+    const keywords = ["usuario", "contraseña", "URL", "Notas del móvil", "Google Chrome", "tabla", "imágenes", "foto", "códigos", "TV", "móvil", "video"];
 
     const highlightKeywords = (text) => {
         let result = text;
