@@ -53,7 +53,8 @@ export const apps = [
       {
         text: "Para ver los canales, entra en la sección 'TV en Directo' o similar. El contenido se cargará automáticamente."
       }
-    ]
+    ],
+    requiresUrlUpdate: false
   },
   {
     id: "ssiptv",
@@ -92,7 +93,8 @@ export const apps = [
         image: "/ListApp/SSIPTV/6.png",
         text: "Pulsa 'SAVE' para guardar los cambios. Después vuelve a la TV para acceder a tu lista actualizada."
       }
-    ]
+    ],
+    requiresUrlUpdate: true
   },
   {
     id: "iboplayer",
@@ -135,7 +137,8 @@ export const apps = [
         image: "/ListApp/IboPlayer/7.png",
         text: "Cierra sesión ('Logout') y vuelve a la TV. Tu lista estará disponible."
       }
-    ]
+    ],
+    requiresUrlUpdate: true
   },
   {
     id: "iptvstreamer",
@@ -192,6 +195,7 @@ export const apps = [
         image: "/ListApp/IPTVStreamer/12.jpg",
         text: "Para añadir o actualizar la lista:\n\n📱 En móvil: pulsa el icono '+' en la parte superior derecha y repite el proceso desde 'Añadir un proveedor de IPTV'.\n\n📺 En TV: repite el proceso desde 'Add an IPTV Provider'."
       }
-    ]
+    ],
+    requiresUrlUpdate: true
   }
 ]

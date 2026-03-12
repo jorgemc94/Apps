@@ -5,11 +5,11 @@ import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 import { Title } from "../../styles/Typography"
 import { motion } from "framer-motion"
+import { UpdateURL } from "../../components/UpdateURL/UpdateURLComponent" // export const UpdateURL = [...]
 
 export function AppDetail() {
-
   const { id } = useParams()
-  const app = apps.find((a) => a.id === id)
+  const app = apps.find(a => a.id === id)
 
   const [currentStep, setCurrentStep] = useState(0)
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024)
@@ -22,18 +22,18 @@ export function AppDetail() {
 
   if (!app) return <p style={{ padding: "1rem" }}>App no encontrada</p>
 
+  // Combina pasos de UpdateURL si aplica
+  const allSteps = app.requiresUrlUpdate ? [...UpdateURL, ...app.steps] : app.steps
+
   const nextStep = () => {
-    if (currentStep < app.steps.length - 1)
-      setCurrentStep((prev) => prev + 1)
+    if (currentStep < allSteps.length - 1) setCurrentStep(prev => prev + 1)
   }
 
   const prevStep = () => {
-    if (currentStep > 0)
-      setCurrentStep((prev) => prev - 1)
+    if (currentStep > 0) setCurrentStep(prev => prev - 1)
   }
 
   let touchStartX = 0
-
   const handleTouchStart = (e) => {
     if (isDesktop) return
     touchStartX = e.touches[0].clientX
@@ -46,17 +46,14 @@ export function AppDetail() {
     else if (diff < -50) prevStep()
   }
 
-  const progress = ((currentStep + 1) / app.steps.length) * 100
+  const progress = ((currentStep + 1) / allSteps.length) * 100
 
   const renderFormattedText = (text) => {
     const blocks = text.split("\n\n")
-
     return blocks.map((block, i) => {
       let type = null
-
       if (block.trim().startsWith("📱")) type = "mobile"
       if (block.trim().startsWith("📺")) type = "tv"
-
       return (
         <TextBlock key={i} type={type}>
           <StepParagraph>{block}</StepParagraph>
@@ -74,40 +71,33 @@ export function AppDetail() {
       transition={pageTransition}
     >
       <PageWrapper>
-
         <Title>{app.name}</Title>
 
-        <StepsViewport
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
+        <StepsViewport onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           <StepsTrack
             as={motion.div}
             animate={isDesktop ? { x: 0 } : { x: `-${currentStep * 100}%` }}
             transition={{ type: "tween", duration: 0.3 }}
           >
-            {app.steps.map((step, index) => (
+            {allSteps.map((step, index) => (
               <StepWrapper key={index}>
-                {(step.text || step.link) && (
-                  <StepText>
-                    {step.text && renderFormattedText(step.text)}
-                    {step.link && (
-                      <StyledLink
-                        href={step.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {step.linkLabel}
-                      </StyledLink>
+                {step.content ? (
+                  // Si es paso de UpdateURL
+                  step.content
+                ) : (
+                  <>
+                    {(step.text || step.link) && (
+                      <StepText>
+                        {step.text && renderFormattedText(step.text)}
+                        {step.link && (
+                          <StyledLink href={step.link} target="_blank" rel="noopener noreferrer">
+                            {step.linkLabel}
+                          </StyledLink>
+                        )}
+                      </StepText>
                     )}
-                  </StepText>
-                )}
-
-                {step.image && (
-                  <img
-                    src={step.image}
-                    alt={`Paso ${index + 1}`}
-                  />
+                    {step.image && <img src={step.image} alt={`Paso ${index + 1}`} />}
+                  </>
                 )}
               </StepWrapper>
             ))}
@@ -123,7 +113,6 @@ export function AppDetail() {
             />
           </ProgressBarWrapper>
         )}
-
       </PageWrapper>
     </PageTransition>
   )
