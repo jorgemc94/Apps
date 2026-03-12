@@ -15,49 +15,6 @@ export const PageWrapper = styled.div`
   }
 `
 
-export const ChoiceScreen = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-`
-
-export const ChoiceButton = styled.button`
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-
-  background: var(--primary);
-  color: white;
-
-  transition: 0.2s;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-`
-
-export const VideoWrapper = styled.div`
-  width: 100%;
-  max-width: 700px; // reducido para escritorio
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-
-  video {
-    width: 100%;
-    max-height: 400px; // limitar altura
-    border-radius: 12px;
-  }
-`
-
 export const StepsViewport = styled.div`
   position: relative;
   flex: 1;

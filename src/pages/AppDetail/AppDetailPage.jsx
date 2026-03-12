@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { apps } from "../../data/apps"
-import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar, StepText, TextBlock, StepParagraph, StyledLink, ChoiceScreen, ChoiceButton, VideoWrapper } from "./AppDetailStyled"
+import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, ProgressBarWrapper, ProgressBar, StepText, TextBlock, StepParagraph, StyledLink } from "./AppDetailStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 import { Title } from "../../styles/Typography"
 import { motion } from "framer-motion"
@@ -12,7 +12,6 @@ export function AppDetail() {
   const app = apps.find((a) => a.id === id)
 
   const [currentStep, setCurrentStep] = useState(0)
-  const [view, setView] = useState("choice")
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024)
 
   useEffect(() => {
@@ -78,100 +77,51 @@ export function AppDetail() {
 
         <Title>{app.name}</Title>
 
-        {view === "choice" && (
-          <ChoiceScreen>
-
-            {app.video && (
-              <ChoiceButton onClick={() => setView("video")}>
-                🎬 Ver vídeo completo
-              </ChoiceButton>
-            )}
-
-            <ChoiceButton onClick={() => setView("steps")}>
-              📖 Seguir guía paso a paso
-            </ChoiceButton>
-
-          </ChoiceScreen>
-        )}
-
-        {view === "video" && app.video && (
-          <VideoWrapper>
-
-            <video controls poster={app.logo}>
-              <source src={app.video} type="video/mp4" />
-            </video>
-
-            <ChoiceButton onClick={() => setView("choice")}>
-              ← Volver
-            </ChoiceButton>
-
-          </VideoWrapper>
-        )}
-
-        {view === "steps" && (
-          <>
-            <StepsViewport
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
-            >
-              <StepsTrack
-                as={motion.div}
-                animate={isDesktop ? { x: 0 } : { x: `-${currentStep * 100}%` }}
-                transition={{ type: "tween", duration: 0.3 }}
-              >
-
-                {app.steps.map((step, index) => (
-                  <StepWrapper key={index}>
-
-                    {(step.text || step.link) && (
-                      <StepText>
-
-                        {step.text && renderFormattedText(step.text)}
-
-                        {step.link && (
-                          <StyledLink
-                            href={step.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {step.linkLabel}
-                          </StyledLink>
-                        )}
-
-                      </StepText>
+        <StepsViewport
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <StepsTrack
+            as={motion.div}
+            animate={isDesktop ? { x: 0 } : { x: `-${currentStep * 100}%` }}
+            transition={{ type: "tween", duration: 0.3 }}
+          >
+            {app.steps.map((step, index) => (
+              <StepWrapper key={index}>
+                {(step.text || step.link) && (
+                  <StepText>
+                    {step.text && renderFormattedText(step.text)}
+                    {step.link && (
+                      <StyledLink
+                        href={step.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {step.linkLabel}
+                      </StyledLink>
                     )}
+                  </StepText>
+                )}
 
-                    {step.image && (
-                      <img
-                        src={step.image}
-                        alt={`Paso ${index + 1}`}
-                      />
-                    )}
+                {step.image && (
+                  <img
+                    src={step.image}
+                    alt={`Paso ${index + 1}`}
+                  />
+                )}
+              </StepWrapper>
+            ))}
+          </StepsTrack>
+        </StepsViewport>
 
-                  </StepWrapper>
-                ))}
-
-              </StepsTrack>
-            </StepsViewport>
-
-            {!isDesktop && (
-              <ProgressBarWrapper>
-                <ProgressBar
-                  as={motion.div}
-                  animate={{ width: `${progress}%` }}
-                  transition={{ duration: 0.3 }}
-                />
-              </ProgressBarWrapper>
-            )}
-
-            <ChoiceButton
-              style={{ marginTop: "1rem" }}
-              onClick={() => setView("choice")}
-            >
-              ← Volver
-            </ChoiceButton>
-
-          </>
+        {!isDesktop && (
+          <ProgressBarWrapper>
+            <ProgressBar
+              as={motion.div}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.3 }}
+            />
+          </ProgressBarWrapper>
         )}
 
       </PageWrapper>
