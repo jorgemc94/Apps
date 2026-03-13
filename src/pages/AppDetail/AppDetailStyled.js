@@ -30,11 +30,11 @@ export const StepsViewport = styled.div`
 export const StepsTrack = styled(motion.div)`
   display: flex;
   width: 100%;
-  flex-direction: row; 
+  flex-direction: row;
   height: 100%;
 
   @media (min-width: 1024px) {
-    flex-direction: column
+    flex-direction: column;
     height: auto;
   }
 `;
@@ -43,17 +43,13 @@ export const StepWrapper = styled.div`
   flex: 0 0 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   width: 100%;
   padding: 0.5rem;
   box-sizing: border-box;
 
   @media (min-width: 1024px) {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: auto;
+    flex-direction: column;
     max-width: 900px;
     margin: 0 auto 2rem auto;
   }
@@ -67,9 +63,9 @@ export const StepVideo = styled.video`
   margin-bottom: 0.5rem;
 
   @media (min-width: 1024px) {
-    flex: none;
-    max-height: 400px;
-    margin-bottom: 0;
+    width: 100%;
+    max-height: 500px;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -81,38 +77,30 @@ export const StepImage = styled.img`
   margin-bottom: 0.5rem;
 
   @media (min-width: 1024px) {
-    flex: none;
-    max-height: 400px;
-    margin-bottom: 0;
+    width: 100%;
+    max-height: 500px;
+    margin-bottom: 1rem;
   }
 `;
 
 export const StepText = styled.div`
-  flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   gap: 0.5rem;
-  width: 100%;
   padding-bottom: 1rem;
+
   ${({ hasTable }) =>
     hasTable &&
     `
     max-height: 50vh;
     overflow-y: auto;
-    justify-content:
     padding-bottom: 0;
   `}
 
   @media (min-width: 1024px) {
-    flex: none;
-    flex-direction: column;
-    width: ${({ hasTable }) => (hasTable ? "100%" : "calc(100% - 500px)")};
-    justify-content: ${({ hasTable }) => (hasTable ? "flex-start" : "center")};
-    margin-left: ${({ hasTable }) => (hasTable ? "0" : "1em")};
     max-height: none;
     overflow: visible;
-    padding-bottom: 0;
   }
 `;
 

@@ -7,8 +7,8 @@ export const UpdateURL = [
       <TableWrapper style={{ maxHeight: "50vh", overflowY: "auto" }}>
         <StepsList>
           <li>
-            Teniendo vuestro usuario y contraseña, abrir el enlace dependiendo de cómo empiece vuestro usuario. 
-            Los últimos empiezan todos por ff, pero si hubiese alguno diferente aparecería aquí debajo:
+            Teniendo vuestro usuarioç, abrir el enlace dependiendo de cómo empiece vuestro usuario. 
+            Los últimos empiezan todos por ff o 2ff:
             <Table>
               <TableHead>
                 <TableRow>
