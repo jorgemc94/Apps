@@ -11,7 +11,7 @@ export function UpdateURL() {
       <TableWrapper>
         <StepsList>
           <li>
-            <StepVideo href="/DataTable/1.png" />
+            <StepVideo src="/UpdateURL/1.mp4" controls/>
             Teniendo vuestro usuario, abrir el enlace dependiendo de cómo empiece vuestro usuario. 
             Los últimos empiezan todos por ff o 2ff:
             <Table>
@@ -40,7 +40,7 @@ export function UpdateURL() {
       <TableWrapper>
         <StepsList>
           <li>
-            <StepVideo href="/DataTable/1.png" />
+            <StepVideo src="/UpdateURL/2.mp4" />
             Al acceder al enlace aparecerá la siguiente imagen, en ella introducir vuestro usuario y contraseña y pinchar en Retrieve Access Details
           </li>
         </StepsList>
@@ -48,7 +48,7 @@ export function UpdateURL() {
       <TableWrapper>
         <StepsList>
           <li>
-            <StepVideo href="/DataTable/1.png" />
+            <StepVideo src="/UpdateURL/3.mp4" />
             Debéis copiar el contenido que aparece dentro de M3U playlist URL.
           </li>
         </StepsList>
@@ -56,7 +56,7 @@ export function UpdateURL() {
       <TableWrapper>
         <StepsList>
           <li>
-            <StepVideo href="/DataTable/1.png" />
+            <StepVideo src="/UpdateURL/4.mp4" />
             Os guardáis el enlace completo y este paso estaría listo. Yo suelo guardar las URL completas en las notas del móvil, así siempre tengo la última actualizada
           </li>
         </StepsList>
