@@ -11,6 +11,7 @@ export const PageWrapper = styled.div`
 
   @media (min-width: 1024px) {
     overflow-y: auto;
+    padding: 2rem 1rem;
   }
 `;
 
@@ -20,10 +21,22 @@ export const StepsViewport = styled.div`
   overflow: hidden;
 
   @media (min-width: 1024px) {
+    position: relative;
     height: auto;
     max-width: 900px;
     margin: 0 auto;
     overflow: visible;
+
+    /* línea timeline */
+    &:before {
+      content: "";
+      position: absolute;
+      left: -40px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--card);
+    }
   }
 `;
 
@@ -36,6 +49,7 @@ export const StepsTrack = styled(motion.div)`
   @media (min-width: 1024px) {
     flex-direction: column;
     height: auto;
+    gap: 2rem;
   }
 `;
 
@@ -49,9 +63,38 @@ export const StepWrapper = styled.div`
   box-sizing: border-box;
 
   @media (min-width: 1024px) {
-    flex-direction: column;
+    position: relative;
+    background: var(--card);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 0 auto;
     max-width: 900px;
-    margin: 0 auto 2rem auto;
+
+    box-shadow: 
+      0 1px 2px rgba(0,0,0,0.04),
+      0 8px 24px rgba(0,0,0,0.06);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        0 2px 6px rgba(0,0,0,0.06),
+        0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    /* punto timeline */
+    &:before {
+      content: "";
+      position: absolute;
+      left: -48px;
+      top: 30px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 4px var(--background);
+    }
   }
 `;
 
@@ -60,12 +103,12 @@ export const StepVideo = styled.video`
   max-height: 50vh;
   border-radius: 12px;
   object-fit: contain;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
 
   @media (min-width: 1024px) {
     width: 100%;
-    max-height: 500px;
-    margin-bottom: 1rem;
+    max-height: 520px;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -78,8 +121,8 @@ export const StepImage = styled.img`
 
   @media (min-width: 1024px) {
     width: 100%;
-    max-height: 500px;
-    margin-bottom: 1rem;
+    max-height: 520px;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -87,7 +130,7 @@ export const StepText = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   padding-bottom: 1rem;
 
   ${({ hasTable }) =>
@@ -99,6 +142,9 @@ export const StepText = styled.div`
   `}
 
   @media (min-width: 1024px) {
+    gap: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
     max-height: none;
     overflow: visible;
   }
@@ -107,9 +153,9 @@ export const StepText = styled.div`
 export const TextBlock = styled.div`
   background: ${({ type }) =>
     type === "mobile"
-      ? "rgba(99, 102, 241, 0.08)"
+      ? "rgba(99,102,241,0.08)"
       : type === "tv"
-      ? "rgba(16, 185, 129, 0.08)"
+      ? "rgba(16,185,129,0.08)"
       : "transparent"};
 
   border-left: ${({ type }) =>
@@ -119,14 +165,14 @@ export const TextBlock = styled.div`
       ? "4px solid #10b981"
       : "none"};
 
-  padding: ${({ type }) => (type ? "0.75rem 1rem" : "0")};
-  border-radius: 8px;
+  padding: ${({ type }) => (type ? "0.9rem 1.1rem" : "0")};
+  border-radius: 10px;
 `;
 
 export const StepParagraph = styled.p`
   margin: 0;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: center;
   white-space: pre-line;
 
@@ -136,13 +182,18 @@ export const StepParagraph = styled.p`
 `;
 
 export const StyledLink = styled.a`
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.1rem;
   background-color: var(--primary);
   color: #fff;
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
   align-self: center;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #4f46e5;
+  }
 
   @media (min-width: 1024px) {
     align-self: flex-start;
