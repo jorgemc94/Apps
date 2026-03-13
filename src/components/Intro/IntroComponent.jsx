@@ -15,12 +15,12 @@ export function IntroComponent() {
     };
 
     return (
-        <Container>
+        <div>
             <Title>Uso de la página</Title>
             <Subtitle>
                 Esta es una guía paso a paso para que puedan actualizar las listas por ustedes mismos. Siempre que sea posible, cada aplicación tendrá un video mostrando cómo lo hago personalmente.
             </Subtitle>
-
+            <Container>
             <StepList>
                 {intro.map((step, index) => (
                     <StepItem key={index} number={index + 1}>
@@ -34,5 +34,6 @@ export function IntroComponent() {
                 Por favor, lean cuidadosamente cada paso antes de realizarlo.
             </Note>
         </Container>
+        </div>
     );
 }

@@ -2,10 +2,13 @@ import styled from "styled-components"
 
 export const TableWrapper = styled.section`
   width: 100%;
+  overflow-x: auto;
+  max-height: none !important;
+  overflow-y: visible !important;
 
   @media (max-width: 1023px) {
-    max-height: 50vh;
-    overflow-y: auto;
+    max-height: none !important;
+    overflow-y: visible !important;
   }
 `
 
@@ -86,9 +89,16 @@ export const StepsList = styled.ul`
   }
 `
 
-export const StepImage = styled.img`
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+export const StepVideo = styled.video`
+  width: 100%;
+  max-height: 50vh;
+  border-radius: 12px;
+  object-fit: contain;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    max-height: 520px;
+    margin-bottom: 2rem;
+  }
 `

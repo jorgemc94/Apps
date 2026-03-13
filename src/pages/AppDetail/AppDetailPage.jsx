@@ -2,28 +2,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { apps } from "../../data/apps";
 import { commonstep } from "../../data/commonstep";
-import {
-  PageWrapper,
-  StepsViewport,
-  StepsTrack,
-  StepWrapper,
-  StepVideo,
-  StepImage,
-  StepText,
-  TextBlock,
-  StepParagraph,
-  StyledLink,
-  ProgressBarWrapper,
-  ProgressBar,
-} from "./AppDetailStyled";
-import {
-  PageTransition,
-  pageVariants,
-  pageTransition,
-} from "../../styles/PageTransition";
+import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, StepVideo, StepImage, StepText, TextBlock, StepParagraph, StyledLink, ProgressBarWrapper, ProgressBar } from "./AppDetailStyled";
+import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition";
 import { Title } from "../../styles/Typography";
 import { motion } from "framer-motion";
-import { UpdateURL } from "../../components/UpdateURL/UpdateURLComponent";
 
 export function AppDetail() {
   const { id } = useParams();
@@ -42,11 +24,7 @@ export function AppDetail() {
 
   if (!app) return <p style={{ padding: "1rem" }}>App no encontrada</p>;
 
-  const allSteps = [
-    ...commonstep,
-    ...(app.requiresUrlUpdate ? UpdateURL : []),
-    ...app.steps,
-  ];
+  const allSteps = [...commonstep, ...app.steps];
 
   const nextStep = () => {
     if (currentStep < allSteps.length - 1) setCurrentStep((prev) => prev + 1);
@@ -71,9 +49,7 @@ export function AppDetail() {
 
   const handleTouchEnd = () => {
     if (isDesktop) return;
-
     const diff = touchStartX - touchCurrentX;
-
     if (diff > 50) nextStep();
     else if (diff < -50) prevStep();
   };
@@ -90,13 +66,10 @@ export function AppDetail() {
 
   const renderFormattedText = (text) => {
     const blocks = text.split("\n\n");
-
     return blocks.map((block, i) => {
       let type = null;
-
       if (block.trim().startsWith("📱")) type = "mobile";
       if (block.trim().startsWith("📺")) type = "tv";
-
       return (
         <TextBlock key={i} type={type}>
           <StepParagraph>{block}</StepParagraph>

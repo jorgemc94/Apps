@@ -5,6 +5,8 @@ import { AppsGalleryComponent } from "../../components/AppsGallery/AppsGalleryCo
 import { PageWrapper, MainContent } from "./HomeStyled"
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition"
 import { IntroComponent } from "../../components/Intro/IntroComponent"
+import { UpdateURL } from "../../components/UpdateURL/UpdateURLComponent"
+import { CommonSteps } from "../../components/CommonSteps/CommonStepsComponent"
 
 export function Home() {
   return (
@@ -19,6 +21,8 @@ export function Home() {
         <HeaderComponent />
         <MainContent>
           <IntroComponent />
+          <CommonSteps />
+          <UpdateURL />
           <AppsGalleryComponent />
           <ContactComponent />
         </MainContent>

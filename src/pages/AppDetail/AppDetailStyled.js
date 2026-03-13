@@ -59,31 +59,32 @@ export const StepWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0.5rem;
+  padding: 1.5rem;
   box-sizing: border-box;
+
+  background: var(--card);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  box-shadow: 
+    0 1px 2px rgba(0,0,0,0.04),
+    0 8px 24px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 2px 6px rgba(0,0,0,0.06),
+      0 12px 32px rgba(0,0,0,0.08);
+  }
 
   @media (min-width: 1024px) {
     position: relative;
-    background: var(--card);
-    border-radius: 16px;
-    padding: 2rem;
-    margin: 0 auto;
     max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
 
-    box-shadow: 
-      0 1px 2px rgba(0,0,0,0.04),
-      0 8px 24px rgba(0,0,0,0.06);
-
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 
-        0 2px 6px rgba(0,0,0,0.06),
-        0 12px 32px rgba(0,0,0,0.08);
-    }
-
-    /* punto timeline */
+    /* punto timeline solo en desktop */
     &:before {
       content: "";
       position: absolute;
@@ -117,7 +118,7 @@ export const StepImage = styled.img`
   max-height: 50vh;
   border-radius: 12px;
   object-fit: contain;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
 
   @media (min-width: 1024px) {
     width: 100%;
@@ -173,7 +174,6 @@ export const StepParagraph = styled.p`
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
-  text-align: center;
   white-space: pre-line;
 
   @media (min-width: 1024px) {
