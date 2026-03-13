@@ -113,20 +113,6 @@ export const StepVideo = styled.video`
   }
 `;
 
-export const StepImage = styled.img`
-  width: 100%;
-  max-height: 50vh;
-  border-radius: 12px;
-  object-fit: contain;
-  margin-bottom: 2.5rem;
-
-  @media (min-width: 1024px) {
-    width: 100%;
-    max-height: 520px;
-    margin-bottom: 2rem;
-  }
-`;
-
 export const StepText = styled.div`
   width: 100%;
   display: flex;

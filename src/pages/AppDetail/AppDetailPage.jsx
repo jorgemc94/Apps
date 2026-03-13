@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { apps } from "../../data/apps";
-import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, StepVideo, StepImage, StepText, TextBlock, StepParagraph, StyledLink, ProgressBarWrapper, ProgressBar } from "./AppDetailStyled";
+import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, StepVideo, StepText, TextBlock, StepParagraph, StyledLink, ProgressBarWrapper, ProgressBar } from "./AppDetailStyled";
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition";
 import { Title } from "../../styles/Typography";
 import { motion } from "framer-motion";
@@ -23,15 +23,18 @@ export function AppDetail() {
 
   if (!app) return <p style={{ padding: "1rem" }}>App no encontrada</p>;
 
-  // Solo los pasos de la app, sin commonstep
   const allSteps = app.steps;
 
   const nextStep = () => {
-    if (currentStep < allSteps.length - 1) setCurrentStep((prev) => prev + 1);
+    if (currentStep < allSteps.length - 1) {
+      setCurrentStep((prev) => prev + 1);
+    }
   };
 
   const prevStep = () => {
-    if (currentStep > 0) setCurrentStep((prev) => prev - 1);
+    if (currentStep > 0) {
+      setCurrentStep((prev) => prev - 1);
+    }
   };
 
   let touchStartX = 0;
@@ -50,6 +53,7 @@ export function AppDetail() {
   const handleTouchEnd = () => {
     if (isDesktop) return;
     const diff = touchStartX - touchCurrentX;
+
     if (diff > 50) nextStep();
     else if (diff < -50) prevStep();
   };
@@ -66,10 +70,13 @@ export function AppDetail() {
 
   const renderFormattedText = (text) => {
     const blocks = text.split("\n\n");
+
     return blocks.map((block, i) => {
       let type = null;
+
       if (block.trim().startsWith("📱")) type = "mobile";
       if (block.trim().startsWith("📺")) type = "tv";
+
       return (
         <TextBlock key={i} type={type}>
           <StepParagraph>{block}</StepParagraph>
@@ -110,15 +117,13 @@ export function AppDetail() {
                 >
                   {step.video && (
                     <StepVideo
-                      src={step.video}
+                      src={ index === currentStep || index === currentStep + 1? step.video : undefined }
+                      data-src={step.video}
                       controls
+                      muted
                       playsInline
-                      preload="auto"
+                      preload={index === currentStep ? "metadata" : "none"}
                     />
-                  )}
-
-                  {!step.video && step.image && (
-                    <StepImage src={step.image} alt={`Paso ${index + 1}`} />
                   )}
 
                   {(step.text || step.link || step.content) && (
