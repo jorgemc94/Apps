@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { apps } from "../../data/apps";
-import { commonstep } from "../../data/commonstep";
 import { PageWrapper, StepsViewport, StepsTrack, StepWrapper, StepVideo, StepImage, StepText, TextBlock, StepParagraph, StyledLink, ProgressBarWrapper, ProgressBar } from "./AppDetailStyled";
 import { PageTransition, pageVariants, pageTransition } from "../../styles/PageTransition";
 import { Title } from "../../styles/Typography";
@@ -24,7 +23,8 @@ export function AppDetail() {
 
   if (!app) return <p style={{ padding: "1rem" }}>App no encontrada</p>;
 
-  const allSteps = [...commonstep, ...app.steps];
+  // Solo los pasos de la app, sin commonstep
+  const allSteps = app.steps;
 
   const nextStep = () => {
     if (currentStep < allSteps.length - 1) setCurrentStep((prev) => prev + 1);
