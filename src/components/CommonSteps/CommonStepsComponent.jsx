@@ -1,5 +1,5 @@
 import React from "react";
-import { StepWrapper, StepVideo, StepImage, StepText, TextBlock, StepParagraph, StyledLink } from "../../pages/AppDetail/AppDetailStyled";
+import { StepWrapper, StepVideo, StepText, TextBlock, StepParagraph, StyledLink } from "../../pages/AppDetail/AppDetailStyled";
 import { commonstep } from "../../data/commonstep";
 import { Title, Subtitle } from "../../styles/Typography";
 
@@ -32,9 +32,6 @@ export function CommonSteps() {
               playsInline
               preload="auto"
             />
-          )}
-          {!step.video && step.image && (
-            <StepImage src={step.image} alt={`Paso ${index + 1}`} />
           )}
           {(step.text || step.link || step.content) && (
             <StepText hasTable={step.content !== undefined}>
