@@ -40,7 +40,7 @@ export function UpdateURL() {
       <TableWrapper>
         <StepsList>
           <li>
-            <StepVideo src="/UpdateURL/2.mp4" />
+            <StepVideo src="/UpdateURL/2.mp4" controls/>
             Al acceder al enlace aparecerá la siguiente imagen, en ella introducir vuestro usuario y contraseña y pinchar en Retrieve Access Details
           </li>
         </StepsList>
@@ -48,16 +48,8 @@ export function UpdateURL() {
       <TableWrapper>
         <StepsList>
           <li>
-            <StepVideo src="/UpdateURL/3.mp4" />
-            Debéis copiar el contenido que aparece dentro de M3U playlist URL.
-          </li>
-        </StepsList>
-      </TableWrapper>
-      <TableWrapper>
-        <StepsList>
-          <li>
-            <StepVideo src="/UpdateURL/4.mp4" />
-            Os guardáis el enlace completo y este paso estaría listo. Yo suelo guardar las URL completas en las notas del móvil, así siempre tengo la última actualizada
+            <StepVideo src="/UpdateURL/3.mp4" controls/>
+            Debéis copiar el contenido que aparece dentro de M3U playlist URL. Una vez copiado guardarlo en las notas del móvil, con los demás datos.
           </li>
         </StepsList>
       </TableWrapper>
