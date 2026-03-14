@@ -16,7 +16,7 @@ export const apps = [
       },
       {
         video: "/ListApp/XPRO/3.mp4",
-        text: "Introduce el código 3680877 y pulsa 'Go' o 'Siguiente'. En televisores la apariencia puede variar ligeramente."
+        text: "Introduce el código 3680877 y pulsa 'Go' o 'Siguiente' o ' ↵ '. En televisores la apariencia puede variar ligeramente."
       },
       {
         video: "/ListApp/XPRO/4.mp4",
@@ -24,34 +24,27 @@ export const apps = [
       },
       {
         video: "/ListApp/XPRO/5.mp4",
-        text: "Activa el permiso correspondiente y vuelve atrás. Después pulsa 'Instalar' para comenzar la instalación."
+        text: "Activa el permiso correspondiente y vuelve atrás."
       },
       {
         video: "/ListApp/XPRO/6.mp4",
-        text: "Espera a que finalice la instalación y pulsa 'Hecho'."
+        text: "Después pulsa 'Instalar' para comenzar la instalación. Espera a que finalice la instalación y pulsa 'Abrir'."
       },
       {
         video: "/ListApp/XPRO/7.mp4",
-        text: "Pulsa 'Done'. A partir de este momento puedes eliminar Downloader si lo deseas."
-      },
-      {
-        video: "/ListApp/XPRO/8.mp4",
         text: "Abre XPRO y selecciona el modo adecuado: 'Mobile' para móvil o 'TV' para televisión. Después pulsa 'Guardar'."
       },
       {
-        video: "/ListApp/XPRO/9.mp4",
+        video: "/ListApp/XPRO/8.mp4",
         text: "Introduce los datos proporcionados: Nombre (puede ser cualquiera), Usuario y Contraseña. Finalmente pulsa 'Enter'."
       },
       {
+        video: "/ListApp/XPRO/9.mp4",
+        text: "Descarga el contenido de la lista. En móvil basta con pulsar cada apartado. En TV debes seleccionarlo y pulsar 'OK' en el mando. Ya puedes disfrutar de los canales."
+      },
+      {
         video: "/ListApp/XPRO/10.mp4",
-        text: "Descarga el contenido de la lista. En móvil basta con pulsar cada apartado. En TV debes seleccionarlo y pulsar 'OK' en el mando."
-      },
-      {
-        video: "/ListApp/XPRO/11.mp4",
-        text: "La aplicación se actualiza automáticamente. Si necesitas hacerlo manualmente, utiliza el icono de actualización (flechas circulares)."
-      },
-      {
-        text: "Para ver los canales, entra en la sección 'TV en Directo' o similar. El contenido se cargará automáticamente."
+        text: "La aplicación se actualiza automáticamente. Si necesitas hacerlo manualmente, utiliza el icono de actualización (flechas circulares). Ya puedes disfrutar de los canales."
       }
     ]
   },
@@ -137,7 +130,11 @@ export const apps = [
       },
       {
         video: "/ListApp/IboPlayer/7.mp4",
-        text: "Cierra sesión ('Logout') y vuelve a la TV. Tu lista estará disponible."
+        text: "Cierra sesión ('Logout')."
+      },
+      {
+        video: "/ListApp/IboPlayer/7.mp4",
+        text: "Vuelve a la aplicación en la TV para ver que funciona correctamente."
       }
     ]
   },
