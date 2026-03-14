@@ -105,11 +105,7 @@ export const apps = [
       },
       {
         video: "/ListApp/IboPlayer/2.mp4",
-        text: "Selecciona la opción 'Account'."
-      },
-      {
-        video: "/ListApp/IboPlayer/3.mp4",
-        text: "Anota los datos 'Mac Address' y 'Device Key' que aparecen en pantalla."
+        text: "Selecciona la opción 'Account'. Anota los datos 'Mac Address' y 'Device Key' que aparecen en pantalla."
       },
       {
         text: "Desde un navegador web accede a:",
@@ -117,19 +113,19 @@ export const apps = [
         linkLabel: "Web oficial IBO Player"
       },
       {
-        video: "/ListApp/IboPlayer/4.mp4",
+        video: "/ListApp/IboPlayer/3.mp4",
         text: "Introduce la Mac Address y la Device Key, completa el captcha y pulsa 'Login'."
       },
       {
-        video: "/ListApp/IboPlayer/5.mp4",
+        video: "/ListApp/IboPlayer/4.mp4",
         text: "Pulsa el icono del lápiz para editar o añadir tu lista."
       },
       {
-        video: "/ListApp/IboPlayer/6.mp4",
+        video: "/ListApp/IboPlayer/5.mp4",
         text: "Pega la URL en 'Playlist URL (M3U o M3U8)'. Debe comenzar por http. Después pulsa 'SAVE'."
       },
       {
-        video: "/ListApp/IboPlayer/7.mp4",
+        video: "/ListApp/IboPlayer/6.mp4",
         text: "Cierra sesión ('Logout')."
       },
       {
