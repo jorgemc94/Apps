@@ -86,11 +86,15 @@ export const apps = [
       },
       {
         video: "/ListApp/SSIPTV/5.mp4",
-        text: "Pega tu URL completa en el campo 'Source'. Es importante que comience por http y no por https. Pulsa 'OK'."
+        text: "Pega tu URL completa en el campo 'Source', si está en Español es 'Fuente'. Es importante que comience por http y no por https. Pulsa 'OK'."
       },
       {
         video: "/ListApp/SSIPTV/6.mp4",
-        text: "Pulsa 'SAVE' para guardar los cambios. Después vuelve a la TV para acceder a tu lista actualizada."
+        text: "Pulsa 'SAVE' para guardar los cambios."
+      },
+      {
+        video: "/ListApp/SSIPTV/7.mp4",
+        text: "Vuelve a la aplicación en la TV para ver que funciona correctamente."
       }
     ]
   },
